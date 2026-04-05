@@ -40,15 +40,11 @@ export default function Sidebar({ collapsed, onToggle }: SidebarProps) {
         <AnimatePresence mode="wait">
           {collapsed ? (
             <motion.div key="icon" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="w-full flex justify-center">
-              <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                <span className="text-sm font-bold text-white">M</span>
-              </div>
+              <img src="/maurilait-logo.png" alt="Maurilait" className="h-8 object-contain brightness-0 invert" />
             </motion.div>
           ) : (
             <motion.div key="logo" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center">
-                <span className="text-lg font-bold text-white">M</span>
-              </div>
+              <img src="/maurilait-logo.png" alt="Maurilait" className="h-9 object-contain brightness-0 invert" />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-display text-white tracking-tight">PRICE</span>
                 <span className="text-xs font-mono text-[#CBD5E1] tracking-widest">PULSE</span>
