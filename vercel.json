@@ -1,9 +1,0 @@
-{
-  "buildCommand": "cd apps/tracker && npm install && npm run build",
-  "outputDirectory": "apps/tracker/dist",
-  "installCommand": "cd apps/tracker && npm install",
-  "framework": "vite",
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
-}
