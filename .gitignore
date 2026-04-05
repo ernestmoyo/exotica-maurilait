@@ -1,0 +1,18 @@
+node_modules/
+dist/
+.env
+.env.local
+*.log
+.DS_Store
+Thumbs.db
+
+# Claude Code config
+.claude/
+
+# Build/temp artifacts
+research/node_modules/
+research/logo_b64_tmp.txt
+research/build-report.sh
+research/generate-pdf.mjs
+research/package.json
+research/package-lock.json

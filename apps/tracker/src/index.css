@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #F5F7FA;
+  --color-card: #FFFFFF;
+  --color-card-light: #F1F5F9;
+  --color-accent: #0068B8;
+  --color-amber: #F59E0B;
+  --color-brand: #003D7A;
+  --color-teal: #2E9E6B;
+  --color-purple: #E85D75;
+  --color-text: #003D7A;
+  --color-heading: #1E3A5F;
+  --color-body: #334155;
+  --color-meta: #94A3B8;
+  --color-success: #16A34A;
+  --color-danger: #DC2626;
+  --color-border: #E2E8F0;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-meta) transparent;
+}
+
+*::-webkit-scrollbar { width: 6px; height: 6px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background-color: var(--color-meta); border-radius: 3px; }
+
+body {
+  background: var(--color-bg);
+  color: var(--color-body);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .glass-card {
+    background: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300;
+  }
+  .glass-card-hover:hover {
+    border-color: #CBD5E1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  .cyan-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+    opacity: 0.3;
+  }
+  .pulse-ring {
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    border: 2px solid var(--color-accent);
+    animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    pointer-events: none;
+  }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}

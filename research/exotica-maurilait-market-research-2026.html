@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mauritius Dairy &amp; FMCG Market Intelligence Report — Exotica Agency x Maurilait</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --exotica-gold: #B8860B;
+  --exotica-gold-light: #D4A853;
+  --maurilait-blue: #003D7A;
+  --maurilait-blue-light: #0068B8;
+  --cyan: #0077B6;
+  --navy: #0A1628;
+  --navy-light: #1A2A44;
+  --forest: #1B4332;
+  --forest-light: #2D6A4F;
+  --amber: #D97706;
+  --red: #E30613;
+  --bg: #FFFFFF;
+  --text: #1A1A2E;
+  --text-muted: #5A6178;
+  --border: #E2E8F0;
+  --card-bg: #FFFFFF;
+  --success: #059669;
+  --danger: #DC2626;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 15px; scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  color: var(--text);
+  background: #FFFFFF;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+/* === COVER PAGE === */
+.cover {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--maurilait-blue) 50%, var(--cyan) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 70%, rgba(184,134,11,0.15) 0%, transparent 50%),
+              radial-gradient(circle at 70% 30%, rgba(0,119,182,0.2) 0%, transparent 50%);
+  animation: coverPulse 8s ease-in-out infinite alternate;
+}
+@keyframes coverPulse {
+  0% { transform: scale(1) rotate(0deg); }
+  100% { transform: scale(1.05) rotate(2deg); }
+}
+.cover > * { position: relative; z-index: 1; }
+.cover-logos {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+.cover-logos img { height: 70px; filter: brightness(0) invert(1); }
+.cover-logos .divider {
+  width: 2px;
+  height: 50px;
+  background: rgba(255,255,255,0.3);
+}
+.cover-badge {
+  display: inline-block;
+  background: rgba(184,134,11,0.25);
+  border: 1px solid rgba(184,134,11,0.5);
+  color: var(--exotica-gold-light);
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+.cover h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+.cover h1 span { color: var(--exotica-gold-light); }
+.cover-sub {
+  font-size: 1.15rem;
+  opacity: 0.85;
+  max-width: 600px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+}
+.cover-meta {
+  display: flex;
+  gap: 40px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+.cover-meta div { display: flex; flex-direction: column; gap: 4px; }
+.cover-meta label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; opacity: 0.6; }
+/* === LAYOUT === */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 40px; }
+/* === TOP NAV === */
+.topnav {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.topnav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topnav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.topnav-brand img { height: 28px; }
+.topnav-brand span {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--exotica-gold);
+}
+.topnav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+.topnav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.topnav-links a:hover { color: var(--maurilait-blue); }
+/* === SECTIONS === */
+section { padding: 70px 0; }
+section:nth-child(even) { background: #FFFFFF; }
+section:nth-child(odd) { background: #FFFFFF; }
+.section-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--exotica-gold);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.2rem;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.section-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+/* === EXECUTIVE SUMMARY === */
+.exec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.exec-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.exec-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+.exec-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+}
+.exec-card.blue::before { background: var(--maurilait-blue-light); }
+.exec-card.gold::before { background: var(--exotica-gold); }
+.exec-card.green::before { background: var(--forest-light); }
+.exec-card.red::before { background: var(--red); }
+.exec-card.cyan::before { background: var(--cyan); }
+.exec-card.amber::before { background: var(--amber); }
+.exec-card .stat {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.exec-card .stat-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+.exec-card .stat-detail {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+/* === KEY INSIGHT CALLOUT === */
+.insight-box {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--maurilait-blue) 100%);
+  border-radius: 16px;
+  padding: 36px 40px;
+  color: white;
+  margin: 30px 0;
+  position: relative;
+  overflow: hidden;
+}
+.insight-box::after {
+  content: '';
+  position: absolute;
+  right: -30px; top: -30px;
+  width: 150px; height: 150px;
+  background: rgba(184,134,11,0.15);
+  border-radius: 50%;
+}
+.insight-box h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--exotica-gold-light);
+  margin-bottom: 12px;
+}
+.insight-box p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  opacity: 0.95;
+}
+.insight-box .highlight {
+  color: var(--exotica-gold-light);
+  font-weight: 600;
+}
+/* === DATA TABLE === */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  font-size: 0.88rem;
+}
+.data-table thead th {
+  background: var(--navy);
+  color: white;
+  padding: 14px 18px;
+  text-align: left;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.data-table thead th:first-child { border-radius: 10px 0 0 0; }
+.data-table thead th:last-child { border-radius: 0 10px 0 0; }
+.data-table tbody td {
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.data-table tbody tr:hover { background: #F8FAFC; }
+.data-table tbody tr:last-child td:first-child { border-radius: 0 0 0 10px; }
+.data-table tbody tr:last-child td:last-child { border-radius: 0 0 10px 0; }
+.data-table .mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--navy);
+}
+.data-table .source {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+/* === BAR CHART CSS === */
+.bar-chart { margin: 30px 0; }
+.bar-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 14px;
+}
+.bar-label {
+  width: 200px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-align: right;
+  flex-shrink: 0;
+}
+.bar-track {
+  flex: 1;
+  height: 32px;
+  background: #F1F5F9;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+.bar-fill {
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  transition: width 1s ease;
+}
+.bar-fill.blue { background: linear-gradient(90deg, var(--maurilait-blue), var(--cyan)); }
+.bar-fill.gold { background: linear-gradient(90deg, var(--exotica-gold), #DAA520); }
+.bar-fill.green { background: linear-gradient(90deg, var(--forest), var(--forest-light)); }
+.bar-fill.red { background: linear-gradient(90deg, #B91C1C, var(--red)); }
+.bar-fill.amber { background: linear-gradient(90deg, #B45309, var(--amber)); }
+/* === DONUT CHART CSS === */
+.donut-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin: 30px 0;
+}
+.donut-item { text-align: center; }
+.donut-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.donut-ring .donut-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.donut-item .donut-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+}
+.donut-item .donut-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+/* === TIMELINE === */
+.timeline { margin: 30px 0; position: relative; padding-left: 40px; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--exotica-gold), var(--maurilait-blue));
+  border-radius: 3px;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+  padding: 20px 24px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -33px;
+  top: 24px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--exotica-gold);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--exotica-gold);
+}
+.timeline-date {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--exotica-gold);
+  margin-bottom: 6px;
+}
+.timeline-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+.timeline-desc {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+/* === TWO COL === */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 30px 0;
+}
+.col-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+}
+.col-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--exotica-gold);
+}
+.col-card ul {
+  list-style: none;
+  padding: 0;
+}
+.col-card li {
+  padding: 8px 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #F1F5F9;
+  display: flex;
+  justify-content: space-between;
+}
+.col-card li:last-child { border-bottom: none; }
+.col-card li .val {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  color: var(--navy);
+}
+/* === BRAND CARDS === */
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 30px 0;
+}
+.brand-card {
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.brand-card::after {
+  content: '';
+  position: absolute;
+  top: -20px; right: -20px;
+  width: 80px; height: 80px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+.brand-card h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+.brand-card p {
+  font-size: 0.78rem;
+  opacity: 0.85;
+}
+/* === TEAM === */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 30px 0;
+}
+.team-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.team-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--exotica-gold-light);
+}
+.team-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.team-card .role {
+  font-size: 0.8rem;
+  color: var(--exotica-gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.team-card .bio {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+/* === FOOTER === */
+.footer {
+  background: var(--navy);
+  color: white;
+  padding: 50px 0 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--exotica-gold-light);
+  margin-bottom: 14px;
+}
+.footer p, .footer li {
+  font-size: 0.82rem;
+  opacity: 0.7;
+  line-height: 1.8;
+}
+.footer ul { list-style: none; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  opacity: 0.5;
+}
+/* === CONFIDENCE TAGS === */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+}
+.tag-high { background: #ECFDF5; color: #065F46; }
+.tag-medium { background: #FFFBEB; color: #92400E; }
+.tag-critical { background: #FEF2F2; color: #991B1B; }
+/* === PRINT === */
+@media print {
+  .topnav { display: none; }
+  section { padding: 40px 0; }
+  .cover { min-height: auto; padding: 80px 40px; }
+  .exec-card:hover { transform: none; box-shadow: none; }
+  body { font-size: 13px; }
+}
+@media (max-width: 768px) {
+  .exec-grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .brand-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: 1fr; }
+  .cover h1 { font-size: 2rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+}
+/* === TOC === */
+.toc {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 36px 40px;
+  margin: 30px 0;
+}
+.toc h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+.toc ol {
+  list-style: none;
+  counter-reset: toc-counter;
+  padding: 0;
+}
+.toc li {
+  counter-increment: toc-counter;
+  padding: 10px 0;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 0.9rem;
+}
+.toc li:last-child { border-bottom: none; }
+.toc li::before {
+  content: counter(toc-counter, decimal-leading-zero);
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--exotica-gold);
+  margin-right: 14px;
+}
+.toc li a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+}
+.toc li a:hover { color: var(--maurilait-blue); }
+/* Pill stats */
+.pill-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 16px 0;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #F8FAFC;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+}
+.pill .pill-val {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  color: var(--navy);
+}
+/* Change indicator */
+.change-up { color: var(--success); }
+.change-up::before { content: '\25B2 '; font-size: 0.65rem; }
+.change-down { color: var(--danger); }
+.change-down::before { content: '\25BC '; font-size: 0.65rem; }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<div class="cover">
+  <div class="cover-logos">
+    <svg width="120" height="40" viewBox="0 0 120 40"><text x="0" y="28" font-family="Space Grotesk,sans-serif" font-size="20" font-weight="700" fill="#D4A853" letter-spacing="4">EXOTICA</text></svg>
+    <div class="divider"></div>
+    <img src="data:image/png;base64,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" alt="Maurilait" style="height:65px">
+  </div>
+  <div class="cover-badge">Market Intelligence Report 2026</div>
+  <h1>Mauritius Dairy &amp; FMCG<br><span>Price Intelligence</span><br>Market Research</h1>
+  <p class="cover-sub">A comprehensive analysis of the Mauritian dairy market, competitive landscape, pricing dynamics, digital transformation, and the strategic case for real-time price monitoring — backed by 100+ verified data points.</p>
+  <div class="cover-meta">
+    <div><label>Prepared by</label><span>Exotica Agency</span></div>
+    <div><label>Date</label><span>April 2026</span></div>
+    <div><label>Version</label><span>1.0</span></div>
+    <div><label>Classification</label><span>Confidential</span></div>
+  </div>
+</div>
+
+<!-- ============ TOP NAV ============ -->
+<nav class="topnav">
+  <div class="container">
+    <div class="topnav-brand">
+      <svg width="100" height="30" viewBox="0 0 100 30"><text x="0" y="22" font-family="Space Grotesk,sans-serif" font-size="15" font-weight="700" fill="#B8860B" letter-spacing="3">EXOTICA</text></svg>
+      <span>Research</span>
+    </div>
+    <ul class="topnav-links">
+      <li><a href="#exec">Executive Summary</a></li>
+      <li><a href="#mauritius">Mauritius Market</a></li>
+      <li><a href="#maurilait">Maurilait</a></li>
+      <li><a href="#global">Global Context</a></li>
+      <li><a href="#digital">Digital</a></li>
+      <li><a href="#case">The Case</a></li>
+      <li><a href="#audit-methodology">Audit</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ============ TABLE OF CONTENTS ============ -->
+<section>
+  <div class="container">
+    <div class="toc">
+      <h3>Table of Contents</h3>
+      <ol>
+        <li><a href="#exec">Executive Summary &amp; Key Findings</a></li>
+        <li><a href="#mauritius">Mauritius Economic &amp; Market Landscape</a></li>
+        <li><a href="#dairy">Mauritius Dairy Market Deep Dive</a></li>
+        <li><a href="#maurilait">Maurilait — Company &amp; Brand Portfolio</a></li>
+        <li><a href="#competitors">Competitive Landscape</a></li>
+        <li><a href="#retail">Retail &amp; Distribution Landscape</a></li>
+        <li><a href="#global">Global Dairy Market &amp; Pricing Trends</a></li>
+        <li><a href="#digital">Digital Transformation &amp; E-Commerce</a></li>
+        <li><a href="#price-tech">Price Intelligence Technology</a></li>
+        <li><a href="#case">The Strategic Case for Price Pulse</a></li>
+        <li><a href="#audit-methodology">Pricing Audit Methodology &amp; Framework</a></li>
+        <li><a href="#team">About Exotica Agency</a></li>
+        <li><a href="#sources">Sources &amp; Methodology</a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1. EXECUTIVE SUMMARY ============ -->
+<section id="exec">
+  <div class="container">
+    <div class="section-label">Section 01</div>
+    <h2 class="section-title">Executive Summary</h2>
+    <p class="section-desc">Key metrics and findings that define the opportunity for price intelligence in the Mauritius dairy market.</p>
+
+    <div class="exec-grid">
+      <div class="exec-card blue">
+        <div class="stat">US$454M</div>
+        <div class="stat-label">Mauritius Dairy Market (2024)</div>
+        <div class="stat-detail">Growing at 5.13% CAGR, projected to reach US$583.8M by 2029. Dairy &amp; eggs represent a major consumer spend category.</div>
+      </div>
+      <div class="exec-card gold">
+        <div class="stat">96-98%</div>
+        <div class="stat-label">Import Dependency</div>
+        <div class="stat-detail">Mauritius produces only 2-4% of its milk needs locally. Rs 2 billion spent annually on dairy imports, 80% from New Zealand &amp; Australia.</div>
+      </div>
+      <div class="exec-card green">
+        <div class="stat">25%</div>
+        <div class="stat-label">Food Share of Household Spend</div>
+        <div class="stat-detail">Average Mauritian household spends Rs 10,480/month on food — the single largest expenditure category. Consumers are acutely price-sensitive.</div>
+      </div>
+      <div class="exec-card red">
+        <div class="stat">9.2%</div>
+        <div class="stat-label">Peak Food Inflation (2025)</div>
+        <div class="stat-detail">Food prices spiked to 9.2% YoY in mid-2025, with 30% rupee depreciation since 2020 amplifying import costs. Now moderating to 3.5%.</div>
+      </div>
+      <div class="exec-card cyan">
+        <div class="stat">US$1.41B</div>
+        <div class="stat-label">Global Price Intelligence Market</div>
+        <div class="stat-detail">Growing at 16.2% CAGR to US$4.28B by 2033. Companies report 10-100x ROI from price monitoring tools.</div>
+      </div>
+      <div class="exec-card amber">
+        <div class="stat">11%</div>
+        <div class="stat-label">Margin Impact of 1% Price Improvement</div>
+        <div class="stat-detail">In FMCG, a 1% improvement in pricing translates to an 11% improvement in margins — the single most powerful profitability lever.</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <h3>Core Thesis</h3>
+      <p>Mauritius is a <span class="highlight">US$454 million dairy market</span> that imports <span class="highlight">96-98%</span> of its milk requirements, where food accounts for <span class="highlight">25% of household spending</span> and the rupee has depreciated <span class="highlight">30% since 2020</span>. In this environment, real-time price intelligence is not a luxury — it is a <span class="highlight">competitive necessity</span>. Maurilait, as market leader with 150+ product references across 4 major brands, stands to gain the most from deploying systematic price monitoring across all 12 districts and 5 outlet types.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. MAURITIUS ECONOMIC LANDSCAPE ============ -->
+<section id="mauritius">
+  <div class="container">
+    <div class="section-label">Section 02</div>
+    <h2 class="section-title">Mauritius Economic &amp; Market Landscape</h2>
+    <p class="section-desc">Understanding the macroeconomic forces shaping consumer purchasing behavior and pricing dynamics.</p>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:20px;color:var(--navy)">Key Economic Indicators</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Indicator</th><th>Value</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Population (2026)</td><td class="mono">1,265,059</td><td class="source">Worldometer</td></tr>
+        <tr><td>Median Age</td><td class="mono">38.3 years</td><td class="source">Worldometer</td></tr>
+        <tr><td>GDP (2025)</td><td class="mono">US$15.73 billion</td><td class="source">IMF</td></tr>
+        <tr><td>GDP Per Capita (2025)</td><td class="mono">US$12,519</td><td class="source">Trading Economics</td></tr>
+        <tr><td>Real GDP Growth (2024)</td><td class="mono">4.7%</td><td class="source">IMF</td></tr>
+        <tr><td>Real GDP Growth (2025 est.)</td><td class="mono">3.0 – 3.2%</td><td class="source">IMF</td></tr>
+        <tr><td>Overall Inflation (Feb 2026)</td><td class="mono">3.5%</td><td class="source">Trading Economics</td></tr>
+        <tr><td>Food Inflation Peak (Jun 2025)</td><td class="mono">9.2% YoY</td><td class="source">Trading Economics</td></tr>
+        <tr><td>Economic Classification</td><td class="mono">Upper-Middle Income</td><td class="source">Trade.gov</td></tr>
+        <tr><td>Consumer Spending (2025)</td><td class="mono">Rs 618.7 billion</td><td class="source">IMF (+6.7% YoY)</td></tr>
+        <tr><td>Food Self-Sufficiency Ratio</td><td class="mono">~25%</td><td class="source">Trade.gov</td></tr>
+        <tr><td>Debt-to-GDP (2023)</td><td class="mono">79.7%</td><td class="source">AfDB</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">Household Expenditure (2023 HBS)</h3>
+    <div class="two-col">
+      <div class="col-card">
+        <h4>Household Income &amp; Spending</h4>
+        <ul>
+          <li><span>Avg Monthly Disposable Income</span><span class="val">Rs 55,600</span></li>
+          <li><span>Avg Monthly Consumption</span><span class="val">Rs 41,870</span></li>
+          <li><span>Avg Monthly Food Spend</span><span class="val">Rs 10,480</span></li>
+          <li><span>Real Income Growth (2017-2023)</span><span class="val change-up">+22.4%</span></li>
+          <li><span>Avg Household Size</span><span class="val">3.2</span></li>
+          <li><span>Per Capita Food Spend (2024)</span><span class="val">US$3,370</span></li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Spending Breakdown</h4>
+        <div class="bar-chart">
+          <div class="bar-row">
+            <div class="bar-label">Food &amp; Beverages</div>
+            <div class="bar-track"><div class="bar-fill blue" style="width:83%">25%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Transport</div>
+            <div class="bar-track"><div class="bar-fill gold" style="width:53%">16%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Alcohol &amp; Tobacco</div>
+            <div class="bar-track"><div class="bar-fill amber" style="width:37%">11%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">Housing &amp; Utilities</div>
+            <div class="bar-track"><div class="bar-fill green" style="width:33%">10%</div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-label">ICT</div>
+            <div class="bar-track"><div class="bar-fill red" style="width:23%">7%</div></div>
+          </div>
+        </div>
+        <p style="font-size:0.72rem;color:var(--text-muted);margin-top:8px">Source: Statistics Mauritius — Household Budget Survey 2023</p>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <h3>Inflation Narrative</h3>
+      <p>Mauritius experienced a <span class="highlight">sharp food inflation spike to 9.2%</span> in mid-2025, driven by rupee depreciation (30% since 2020) and global commodity price increases. While overall inflation has moderated to 3.5% by February 2026, the structural vulnerability remains: Mauritius imports <span class="highlight">75% of all food consumed</span>, making the island uniquely exposed to global price shocks and currency movements. For a dairy processor importing 96-98% of raw materials, price monitoring is existential.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. DAIRY MARKET DEEP DIVE ============ -->
+<section id="dairy">
+  <div class="container">
+    <div class="section-label">Section 03</div>
+    <h2 class="section-title">Mauritius Dairy Market Deep Dive</h2>
+    <p class="section-desc">A US$454 million market with near-total import dependency and growing consumer demand.</p>
+
+    <div class="exec-grid">
+      <div class="exec-card blue">
+        <div class="stat">US$454.5M</div>
+        <div class="stat-label">Market Revenue (2024)</div>
+        <div class="stat-detail">Dairy Products &amp; Eggs. Includes milk, yogurt, cheese, eggs, and substitutes.</div>
+      </div>
+      <div class="exec-card gold">
+        <div class="stat">5.13%</div>
+        <div class="stat-label">CAGR (2024-2029)</div>
+        <div class="stat-detail">Projected to reach US$583.8M by 2029 driven by premiumization and new categories.</div>
+      </div>
+      <div class="exec-card green">
+        <div class="stat">122 kg</div>
+        <div class="stat-label">Per Capita Consumption</div>
+        <div class="stat-detail">Annual per capita dairy &amp; eggs consumption (2024), indicating strong baseline demand.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">Import Dependency &amp; Supply Chain</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Metric</th><th>Value</th><th>Context</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Local Milk Production</td><td class="mono">4-5M litres/year</td><td class="source">2-4% of total requirement (IAEA)</td></tr>
+        <tr><td>Annual Dairy Import Cost</td><td class="mono">~Rs 2 billion</td><td class="source">Mauritius Chamber of Agriculture</td></tr>
+        <tr><td>Dairy Share of Total Imports</td><td class="mono">US$124M (1.98%)</td><td class="source">Trend Economy, 2023</td></tr>
+        <tr><td>Primary Import Source</td><td class="mono">NZ &amp; Australia (80%)</td><td class="source">Slow Food</td></tr>
+        <tr><td>Total Agricultural Imports (2024)</td><td class="mono">US$1.6 billion</td><td class="source">24.4% of total imports (Trade.gov)</td></tr>
+        <tr><td>CPI Weight: Milk, Cheese &amp; Eggs</td><td class="mono">29.0 per 1,000</td><td class="source">CEIC Data (2.9% of CPI basket)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">Agricultural Import Sources (2024 Market Share)</h3>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">France</div>
+        <div class="bar-track"><div class="bar-fill blue" style="width:73%">11%</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">South Africa</div>
+        <div class="bar-track"><div class="bar-fill green" style="width:67%">10%</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">India</div>
+        <div class="bar-track"><div class="bar-fill amber" style="width:53%">8%</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Australia</div>
+        <div class="bar-track"><div class="bar-fill gold" style="width:40%">6%</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">New Zealand</div>
+        <div class="bar-track"><div class="bar-fill red" style="width:33%">5%</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Spain</div>
+        <div class="bar-track"><div class="bar-fill blue" style="width:33%">5%</div></div>
+      </div>
+    </div>
+    <p style="font-size:0.78rem;color:var(--text-muted)">Source: US Trade.gov — Mauritius Agricultural Sectors, 2024</p>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">Current Retail Dairy Prices (March 2026)</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Product</th><th>Average Price (MUR)</th><th>Range (MUR)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Milk (regular, 1 litre)</td><td class="mono">Rs 65.71</td><td>Rs 50 – 100</td></tr>
+        <tr><td>Local Cheese (1 kg)</td><td class="mono">Rs 420.91</td><td>Rs 176 – 700</td></tr>
+        <tr><td>Eggs (12 pack)</td><td class="mono">Rs 110.13</td><td>Rs 60 – 144</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.72rem;color:var(--text-muted);margin-top:6px">Source: Numbeo Cost of Living Index, updated March 2026</p>
+
+    <div class="insight-box">
+      <h3>Price Volatility Risk</h3>
+      <p>The <span class="highlight">2x price range</span> observed across retail channels (e.g., milk at Rs 50–100 per litre) reveals significant pricing inconsistency. With <span class="highlight">27 price-controlled products</span> including powder milk, the government actively monitors prices through the <span class="highlight">MOPRI platform</span> (450+ products, 50+ outlets). For Maurilait, systematic price monitoring ensures compliance, competitive positioning, and margin protection across all channels.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. MAURILAIT COMPANY PROFILE ============ -->
+<section id="maurilait">
+  <div class="container">
+    <div class="section-label">Section 04</div>
+    <h2 class="section-title">Maurilait — Company &amp; Brand Portfolio</h2>
+    <p class="section-desc">50 years of market leadership in Mauritius dairy, backed by the Eclosia Group.</p>
+
+    <div class="two-col">
+      <div class="col-card">
+        <h4>Company Profile</h4>
+        <ul>
+          <li><span>Founded</span><span class="val">1976 (50 years)</span></li>
+          <li><span>Parent Group</span><span class="val">Eclosia Group</span></li>
+          <li><span>Eclosia Revenue</span><span class="val">MUR 20B+ (~US$450M)</span></li>
+          <li><span>Eclosia Employees</span><span class="val">5,300+</span></li>
+          <li><span>Eclosia Ranking</span><span class="val">Top 5 in Mauritius</span></li>
+          <li><span>Maurilait Employees</span><span class="val">225</span></li>
+          <li><span>Product References</span><span class="val">150+</span></li>
+          <li><span>Annual Production</span><span class="val">18,500 tonnes</span></li>
+          <li><span>Managing Director</span><span class="val">Olivier Zuel</span></li>
+          <li><span>HQ</span><span class="val">Phoenix, Mauritius</span></li>
+          <li><span>Market Position</span><span class="val">Market Leader</span></li>
+          <li><span>Regional Expansion</span><span class="val">Madagascar (2020)</span></li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Production Capacity</h4>
+        <ul>
+          <li><span>Perette Line</span><span class="val">70,000 bottles/day</span></li>
+          <li><span>Candia UHT Line</span><span class="val">40-60K litres/day</span></li>
+          <li><span>Operating Schedule</span><span class="val">6 days/week</span></li>
+          <li><span>Product Categories</span><span class="val">142 references</span></li>
+          <li><span>Raw Material Source</span><span class="val">Oceania (2,000t/year)</span></li>
+        </ul>
+        <h4 style="margin-top:20px">Distribution (via Panagora)</h4>
+        <ul>
+          <li><span>CDP</span><span class="val">Corner shops</span></li>
+          <li><span>GMS</span><span class="val">Supermarkets</span></li>
+          <li><span>Food Service</span><span class="val">Hotels &amp; restaurants</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:40px 0 20px;color:var(--navy)">Brand Portfolio</h3>
+    <div class="brand-grid">
+      <div class="brand-card" style="background:linear-gradient(135deg,#E30613,#FF4444)">
+        <h4>Yoplait</h4>
+        <p>Yogurt — firm, mixed, drinks. International franchise. #2 yogurt brand worldwide.</p>
+      </div>
+      <div class="brand-card" style="background:linear-gradient(135deg,#0068B8,#0088DD)">
+        <h4>Candia</h4>
+        <p>UHT Milk. International franchise since 1990s. Core revenue driver.</p>
+      </div>
+      <div class="brand-card" style="background:linear-gradient(135deg,#F7A823,#FFCC00)">
+        <h4>J (Juice)</h4>
+        <p>Fruit nectar/juice. Launched 2014. First non-dairy product line.</p>
+      </div>
+      <div class="brand-card" style="background:linear-gradient(135deg,#8B4513,#A0522D)">
+        <h4>Candia Creme</h4>
+        <p>Cream products. Premium segment extension of the Candia brand.</p>
+      </div>
+    </div>
+    <div class="brand-grid" style="grid-template-columns:repeat(4,1fr);margin-top:0">
+      <div class="brand-card" style="background:linear-gradient(135deg,#2563EB,#3B82F6)">
+        <h4>Miko</h4>
+        <p>Ice cream. International franchise. Seasonal demand peaks.</p>
+      </div>
+      <div class="brand-card" style="background:linear-gradient(135deg,#7C3AED,#8B5CF6)">
+        <h4>Perette</h4>
+        <p>Flavoured sterilized milk. Local brand, first in Mauritius.</p>
+      </div>
+      <div class="brand-card" style="background:linear-gradient(135deg,#059669,#10B981)">
+        <h4>Dahi</h4>
+        <p>Traditional curdled milk. Indian-heritage inspired local brand.</p>
+      </div>
+      <div class="brand-card" style="background:linear-gradient(135deg,#6366F1,#818CF8)">
+        <h4>Greek / Skyr</h4>
+        <p>Premium yogurt lines. Modern, health-conscious product extensions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. COMPETITIVE LANDSCAPE ============ -->
+<section id="competitors">
+  <div class="container">
+    <div class="section-label">Section 05</div>
+    <h2 class="section-title">Competitive Landscape</h2>
+    <p class="section-desc">Mapping the competitive forces in the Mauritius dairy and FMCG ecosystem.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr><th>Company</th><th>Type</th><th>Key Details</th><th>Relevance</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Innodis Ltd</strong></td><td class="mono">Direct Competitor</td><td>Revenue MUR 6B+. 1,400 employees. Serves 5,700+ outlets. DairyVale yogurt, Jump drinking yoghurt, Lait Caille.</td><td><span class="tag tag-critical">High Threat</span></td></tr>
+        <tr><td><strong>Grays Inc</strong></td><td class="mono">FMCG Distributor</td><td>Leading importer/distributor. Wide consumer goods range including dairy imports.</td><td><span class="tag tag-medium">Medium</span></td></tr>
+        <tr><td><strong>Phoenix Beverages</strong></td><td class="mono">Beverage</td><td>Major beverage company (soft drinks, beer, spirits). Competes in beverage share of stomach.</td><td><span class="tag tag-medium">Medium</span></td></tr>
+        <tr><td><strong>Nestlé (imported)</strong></td><td class="mono">Global Player</td><td>Products reach Mauritius through importers. Competes in UHT, infant nutrition, dairy.</td><td><span class="tag tag-medium">Medium</span></td></tr>
+        <tr><td><strong>Danone (imported)</strong></td><td class="mono">Global Player</td><td>Imported yogurt and dairy products. Direct category overlap with Yoplait.</td><td><span class="tag tag-critical">High Threat</span></td></tr>
+        <tr><td><strong>Lactalis (imported)</strong></td><td class="mono">Global Player</td><td>World's #1 dairy company ($30.3B). Imports reach Mauritius. Notable: acquiring Yoplait brand globally.</td><td><span class="tag tag-critical">High Threat</span></td></tr>
+        <tr><td><strong>Clover Industries</strong></td><td class="mono">Regional (SA)</td><td>South African dairy exports to Mauritius valued at US$3.02M (2022).</td><td><span class="tag tag-high">Watch</span></td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-box">
+      <h3>Competitive Intelligence Gap</h3>
+      <p>Maurilait faces competition from <span class="highlight">Innodis (5,700+ outlets)</span> domestically and imported brands from <span class="highlight">Lactalis (#1 global, $30.3B)</span>, Danone, and Nestlé. With Lactalis actively integrating Yoplait globally, the competitive dynamics are shifting. Yet most Mauritian dairy companies lack systematic price monitoring across channels — creating a <span class="highlight">first-mover advantage</span> for whoever deploys price intelligence first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. RETAIL & DISTRIBUTION ============ -->
+<section id="retail">
+  <div class="container">
+    <div class="section-label">Section 06</div>
+    <h2 class="section-title">Retail &amp; Distribution Landscape</h2>
+    <p class="section-desc">The channels through which Maurilait products reach 1.27 million consumers.</p>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin-bottom:20px;color:var(--navy)">Major Retail Chains</h3>
+    <div class="bar-chart">
+      <div class="bar-row">
+        <div class="bar-label">Winner's (IBL Group)</div>
+        <div class="bar-track"><div class="bar-fill blue" style="width:100%">25 stores</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Intermart</div>
+        <div class="bar-track"><div class="bar-fill gold" style="width:40%">10 stores</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">GSR (Store 2000 / Popo)</div>
+        <div class="bar-track"><div class="bar-fill green" style="width:36%">9 stores</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Jumbo</div>
+        <div class="bar-track"><div class="bar-fill amber" style="width:28%">7 stores</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Super U</div>
+        <div class="bar-track"><div class="bar-fill red" style="width:12%">3 stores</div></div>
+      </div>
+    </div>
+    <p style="font-size:0.72rem;color:var(--text-muted);margin-top:6px">Additional chains: London Way, Food Lover's Market, King Savers, Dream Price, Savemart, Lolo</p>
+
+    <div class="two-col" style="margin-top:30px">
+      <div class="col-card">
+        <h4>Distribution Structure</h4>
+        <ul>
+          <li><span>Modern Trade</span><span class="val">Supermarkets / Hypers</span></li>
+          <li><span>Traditional Trade</span><span class="val">Corner shops / Boutiques</span></li>
+          <li><span>Open Markets</span><span class="val">Weekly fairs</span></li>
+          <li><span>Distribution Hubs</span><span class="val">Port Louis, Plaine Magnien</span></li>
+          <li><span>Delivery Time</span><span class="val">Hours to 1 day</span></li>
+          <li><span>Island Area</span><span class="val">2,040 km²</span></li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Price Control Framework</h4>
+        <ul>
+          <li><span>Controlled Products</span><span class="val">27 items</span></li>
+          <li><span>Includes Powder Milk</span><span class="val tag tag-critical">Yes</span></li>
+          <li><span>Govt Monitoring App</span><span class="val">MOPRI</span></li>
+          <li><span>Products Tracked</span><span class="val">450+</span></li>
+          <li><span>Outlets Monitored</span><span class="val">50+</span></li>
+          <li><span>Regulatory Body</span><span class="val">Min. of Commerce</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. GLOBAL DAIRY MARKET ============ -->
+<section id="global">
+  <div class="container">
+    <div class="section-label">Section 07</div>
+    <h2 class="section-title">Global Dairy Market &amp; Pricing Trends</h2>
+    <p class="section-desc">A US$1 trillion global market experiencing unprecedented price volatility.</p>
+
+    <div class="exec-grid">
+      <div class="exec-card blue">
+        <div class="stat">US$1.02T</div>
+        <div class="stat-label">Global Dairy Market (2025)</div>
+        <div class="stat-detail">Growing at 4.75% CAGR. Projected to reach US$1.49 trillion by 2033.</div>
+      </div>
+      <div class="exec-card gold">
+        <div class="stat">21%</div>
+        <div class="stat-label">FAO Price Swing</div>
+        <div class="stat-detail">FAO Dairy Price Index swung from 153.5 (May 2025) to 120.9 (March 2026) — 21% decline in under a year.</div>
+      </div>
+      <div class="exec-card green">
+        <div class="stat">US$23.2B</div>
+        <div class="stat-label">Middle East &amp; Africa Dairy (2025)</div>
+        <div class="stat-detail">Growing at 5.50% CAGR to US$39.6B by 2035. Africa projected at 76M tonnes by 2035.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">FAO Dairy Price Index Timeline</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">December 2024</div>
+        <div class="timeline-title">Index at 138.9 — Up 17% Year-on-Year</div>
+        <div class="timeline-desc">Strong recovery in global dairy prices driven by tight supply. Butter reaches record highs.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">May 2025 — PEAK</div>
+        <div class="timeline-title">Index Hits 153.5 — Up 21.5% YoY</div>
+        <div class="timeline-desc">Peak prices driven by tight global supplies, strong demand, and cheese price surges. Maximum cost pressure on importers like Maurilait.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">2025 Full Year Average</div>
+        <div class="timeline-title">Index Averages 146.9 — Up 13.2% vs 2024</div>
+        <div class="timeline-desc">Sustained elevation. Despite late-year easing, 2025 was a significantly more expensive year for dairy procurement globally.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">March 2026</div>
+        <div class="timeline-title">Index at 120.9 — Down 18.7% YoY</div>
+        <div class="timeline-desc">Sharp correction. Global production reaches 992.7M tonnes. Prices normalize but remain volatile. Import cost relief for Mauritius.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">Global Dairy Top 10 Companies (2025, Rabobank)</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Rank</th><th>Company</th><th>Country</th><th>Revenue (USD B)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="mono">1</td><td><strong>Lactalis</strong></td><td>France</td><td class="mono">$30.3</td></tr>
+        <tr><td class="mono">2</td><td><strong>Nestlé</strong></td><td>Switzerland</td><td class="mono">$25.0</td></tr>
+        <tr><td class="mono">3</td><td><strong>Dairy Farmers of America</strong></td><td>USA</td><td class="mono">$24.8</td></tr>
+        <tr><td class="mono">4</td><td><strong>Danone</strong></td><td>France</td><td class="mono">$19.4</td></tr>
+        <tr><td class="mono">5</td><td><strong>Yili</strong></td><td>China</td><td class="mono">$18.5</td></tr>
+        <tr><td class="mono">6</td><td><strong>Fonterra</strong></td><td>New Zealand</td><td class="mono">$17.6</td></tr>
+        <tr><td class="mono">7</td><td><strong>FrieslandCampina</strong></td><td>Netherlands</td><td class="mono">$14.0</td></tr>
+        <tr><td class="mono">8</td><td><strong>Arla Foods</strong></td><td>Denmark/Sweden</td><td class="mono">$13.9</td></tr>
+        <tr><td class="mono">9</td><td><strong>Mengniu</strong></td><td>China</td><td class="mono">$12.1</td></tr>
+        <tr><td class="mono">10</td><td><strong>Saputo</strong></td><td>Canada</td><td class="mono">$11.8</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.72rem;color:var(--text-muted);margin-top:6px">Source: Rabobank Global Dairy Top 20 via Dairy Dimension. Note: Lactalis crossed $30B for the first time. Yoplait integration into Lactalis/Sodiaal expected in 2026.</p>
+  </div>
+</section>
+
+<!-- ============ 8. DIGITAL TRANSFORMATION ============ -->
+<section id="digital">
+  <div class="container">
+    <div class="section-label">Section 08</div>
+    <h2 class="section-title">Digital Transformation &amp; E-Commerce in Mauritius</h2>
+    <p class="section-desc">Africa's #1 e-commerce-ready nation with 168% mobile penetration and rapidly growing digital payments.</p>
+
+    <div class="exec-grid">
+      <div class="exec-card blue">
+        <div class="stat">#1</div>
+        <div class="stat-label">E-Commerce Readiness in Africa</div>
+        <div class="stat-detail">Mauritius ranks 1st in Sub-Saharan Africa and 55th globally on UNCTAD B2C E-commerce Index (score: 68.4%).</div>
+      </div>
+      <div class="exec-card gold">
+        <div class="stat">168%</div>
+        <div class="stat-label">Mobile Penetration</div>
+        <div class="stat-detail">2.14 million connections for 1.27M people. 95.8% broadband (3G/4G/5G). 88.6% of households have smartphones.</div>
+      </div>
+      <div class="exec-card green">
+        <div class="stat">94.3%</div>
+        <div class="stat-label">Facebook Dominance</div>
+        <div class="stat-detail">859,000 users (67.7% of population). Facebook utterly dominates social media and commerce channels in Mauritius.</div>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-card">
+        <h4>Digital Infrastructure</h4>
+        <ul>
+          <li><span>Internet Penetration</span><span class="val">79.5%</span></li>
+          <li><span>Social Media Users</span><span class="val">859,000</span></li>
+          <li><span>Instagram Users</span><span class="val">399,000</span></li>
+          <li><span>LinkedIn Users</span><span class="val">570,000</span></li>
+          <li><span>Median Download Speed</span><span class="val">51.71 Mbps</span></li>
+          <li><span>E-Commerce Revenue (2025)</span><span class="val">US$35.8M</span></li>
+          <li><span>E-Commerce CAGR</span><span class="val">8.9%</span></li>
+          <li><span>E-Commerce User Penetration</span><span class="val">21.9%</span></li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Digital Payments &amp; Grocery</h4>
+        <ul>
+          <li><span>Grocery Delivery Revenue (2024)</span><span class="val">US$63.6M</span></li>
+          <li><span>Grocery Delivery CAGR</span><span class="val">17.98%</span></li>
+          <li><span>Grocery by 2029</span><span class="val">US$145.3M</span></li>
+          <li><span>Digital Payments by 2029</span><span class="val">US$3.84B</span></li>
+          <li><span>Digital Payments Growth</span><span class="val change-up">21.17% CAGR</span></li>
+          <li><span>Payment Backbone</span><span class="val">MauCAS (BoM)</span></li>
+          <li><span>Contactless Payments</span><span class="val">45%+</span></li>
+          <li><span>Key Wallets</span><span class="val">Juice, Orange Money</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">Online Grocery Platforms in Mauritius</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Platform</th><th>Description</th><th>Coverage</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Votre Pote Age</strong></td><td>"#1 online supermarket" — 24hr delivery</td><td>Island-wide</td></tr>
+        <tr><td><strong>Winner's Online</strong></td><td>Click-and-collect + home delivery</td><td>Island-wide</td></tr>
+        <tr><td><strong>Mycart.mu</strong></td><td>Multi-vendor marketplace</td><td>Mauritius &amp; Rodrigues</td></tr>
+        <tr><td><strong>eShops.mu</strong></td><td>Digital mall aggregator</td><td>Home delivery</td></tr>
+        <tr><td><strong>Scott Home Delivery</strong></td><td>Premium groceries &amp; wines</td><td>Island-wide</td></tr>
+        <tr><td><strong>PriceGuru.mu</strong></td><td>Price comparison (electronics/general)</td><td>Online</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight-box">
+      <h3>Digital Commerce Opportunity</h3>
+      <p>With <span class="highlight">88.6% smartphone penetration</span>, <span class="highlight">grocery delivery growing at 18% CAGR</span>, and <span class="highlight">digital payments projected at US$3.84B by 2029</span>, the Mauritius market is rapidly digitalizing. Price Pulse is positioned at the intersection of this digital transformation — giving Maurilait real-time visibility into an increasingly complex omnichannel landscape where prices can vary 2x between outlets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. PRICE INTELLIGENCE TECHNOLOGY ============ -->
+<section id="price-tech">
+  <div class="container">
+    <div class="section-label">Section 09</div>
+    <h2 class="section-title">Price Intelligence Technology</h2>
+    <p class="section-desc">The global market for price monitoring software is booming — and for good reason.</p>
+
+    <div class="exec-grid">
+      <div class="exec-card blue">
+        <div class="stat">16.2%</div>
+        <div class="stat-label">CAGR of Price Intelligence Software</div>
+        <div class="stat-detail">Market growing from US$1.41B (2024) to US$4.28B by 2033. Asia-Pacific fastest at 18.5% CAGR.</div>
+      </div>
+      <div class="exec-card gold">
+        <div class="stat">10-100x</div>
+        <div class="stat-label">Typical ROI</div>
+        <div class="stat-detail">Companies deploying price intelligence tools report 10x to 100x return on investment.</div>
+      </div>
+      <div class="exec-card green">
+        <div class="stat">88%</div>
+        <div class="stat-label">CPG Firms Budgeting for AI</div>
+        <div class="stat-detail">66% already deploying generative AI. Companies that adopt AI see 30% marketing ROI improvement and 65% forecasting error reduction.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">The Business Case for Price Intelligence</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>Metric</th><th>Impact</th><th>Source</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1% Price Improvement</td><td class="mono change-up">11% margin improvement</td><td class="source">FP&A Professionals</td></tr>
+        <tr><td>Digital Tool Adoption</td><td class="mono change-up">23% more profitable</td><td class="source">SoftServe</td></tr>
+        <tr><td>Revenue Growth with RGM</td><td class="mono change-up">5-10% annually</td><td class="source">Catena Solutions</td></tr>
+        <tr><td>AI Forecasting Error Reduction</td><td class="mono change-up">-65% error</td><td class="source">AppInventiv</td></tr>
+        <tr><td>AI Marketing ROI</td><td class="mono change-up">+30% improvement</td><td class="source">AppInventiv</td></tr>
+        <tr><td>Inventory Error Reduction</td><td class="mono change-up">Up to -50%</td><td class="source">RedCloud Technology</td></tr>
+        <tr><td>Trade Promotions Failing ROI</td><td class="mono change-down">72% of all trade spend</td><td class="source">NielsenIQ</td></tr>
+        <tr><td>Market Share at Risk for Slow Adopters</td><td class="mono change-down">10-15% loss by 2030</td><td class="source">TTMS</td></tr>
+        <tr><td>Products Out of Stock at Any Time</td><td class="mono change-down">Up to 10%</td><td class="source">RedCloud Technology</td></tr>
+        <tr><td>Modern Price Collection Speed</td><td class="mono">2 seconds/product</td><td class="source">Optimix</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">AI &amp; Digital Transformation in FMCG</h3>
+    <div class="donut-grid">
+      <div class="donut-item">
+        <div class="donut-ring" style="background:conic-gradient(var(--maurilait-blue) 0% 88%, #E2E8F0 88%)">
+          <div class="donut-value">88%</div>
+        </div>
+        <div class="donut-label">CPG Firms Budgeting for AI</div>
+        <div class="donut-sub">Actively investing</div>
+      </div>
+      <div class="donut-item">
+        <div class="donut-ring" style="background:conic-gradient(var(--exotica-gold) 0% 75%, #E2E8F0 75%)">
+          <div class="donut-value">75%</div>
+        </div>
+        <div class="donut-label">Cite Digital as Top Priority</div>
+        <div class="donut-sub">FMCG companies</div>
+      </div>
+      <div class="donut-item">
+        <div class="donut-ring" style="background:conic-gradient(var(--forest-light) 0% 66%, #E2E8F0 66%)">
+          <div class="donut-value">66%</div>
+        </div>
+        <div class="donut-label">Already Deploying Gen AI</div>
+        <div class="donut-sub">CPG firms globally</div>
+      </div>
+      <div class="donut-item">
+        <div class="donut-ring" style="background:conic-gradient(var(--danger) 0% 12%, #E2E8F0 12%)">
+          <div class="donut-value">12%</div>
+        </div>
+        <div class="donut-label">Achieve Full Tech ROI</div>
+        <div class="donut-sub">First-mover advantage critical</div>
+      </div>
+    </div>
+    <p style="font-size:0.72rem;color:var(--text-muted)">Sources: CIO Inc, RedCloud Technology, SoftServe, TTMS</p>
+
+    <div class="insight-box">
+      <h3>The AI Imperative</h3>
+      <p>The global AI in consumer goods market is exploding from <span class="highlight">$3.1B to $37.3B</span> (31.8% CAGR). While 88% of CPG firms are budgeting for AI, only <span class="highlight">12% achieve full ROI</span>. This creates a massive first-mover advantage: companies that deploy intelligent price monitoring now will capture the efficiency gains while competitors still struggle with manual processes. For Maurilait, Price Pulse represents this first-mover opportunity in the Mauritius market.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. THE CASE FOR PRICE PULSE ============ -->
+<section id="case">
+  <div class="container">
+    <div class="section-label">Section 10</div>
+    <h2 class="section-title">The Strategic Case for Price Pulse</h2>
+    <p class="section-desc">Why real-time price intelligence is not optional for Mauritius' market leader.</p>
+
+    <div class="two-col">
+      <div class="col-card" style="border-left:4px solid var(--danger)">
+        <h4 style="border-color:var(--danger)">The Problem</h4>
+        <ul style="list-style:none;padding:0">
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">96-98% import dependency exposes to global commodity price swings</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">30% rupee depreciation since 2020 amplifies import costs</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">2x price variation between outlets (Rs 50-100 for 1L milk)</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">27 price-controlled products requiring compliance monitoring</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">72% of trade promotions fail to return on investment globally</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">Innodis serves 5,700+ outlets — visibility is a competitive weapon</li>
+          <li style="padding:10px 0;font-size:0.85rem">Lactalis ($30.3B) integrating Yoplait globally — pricing pressure incoming</li>
+        </ul>
+      </div>
+      <div class="col-card" style="border-left:4px solid var(--success)">
+        <h4 style="border-color:var(--success)">The Solution: Price Pulse</h4>
+        <ul style="list-style:none;padding:0">
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">Panel-based pricing audit across all 12 districts, 5 outlet types</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">Consistent audit panel of 40 outlets for month-on-month statistical validity</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">Automated competitor price intelligence with % change arrows (Innodis, imports)</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">4 brand portfolios audited: Yoplait, Candia, J, Candia Creme + 12 competitor products</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">Price anomaly detection and compliance alerts</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">Regional heatmaps showing pricing disparities by district</li>
+          <li style="padding:10px 0;border-bottom:1px solid #F1F5F9;font-size:0.85rem">Field audit network: 24+ trained staff across Mauritius</li>
+          <li style="padding:10px 0;font-size:0.85rem">Weekly audit cycle with Week 4 dashboard access</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:40px 0 20px;color:var(--navy)">Expected Impact</h3>
+    <div class="exec-grid" style="grid-template-columns:repeat(4,1fr)">
+      <div class="exec-card blue">
+        <div class="stat">+11%</div>
+        <div class="stat-label">Margin Improvement</div>
+        <div class="stat-detail">From just 1% price optimization across 150+ SKUs.</div>
+      </div>
+      <div class="exec-card gold">
+        <div class="stat">100%</div>
+        <div class="stat-label">Price Compliance</div>
+        <div class="stat-detail">Real-time monitoring of 27 controlled products.</div>
+      </div>
+      <div class="exec-card green">
+        <div class="stat">12</div>
+        <div class="stat-label">Districts Covered</div>
+        <div class="stat-detail">Island-wide visibility into every pricing zone.</div>
+      </div>
+      <div class="exec-card cyan">
+        <div class="stat">2s</div>
+        <div class="stat-label">Per-Product Collection</div>
+        <div class="stat-detail">Modern mobile data capture in the field.</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <h3>The Exotica Advantage</h3>
+      <p>Unlike international price monitoring platforms that cost <span class="highlight">$50,000-$500,000/year</span> and lack Mauritius-specific coverage, Exotica combines <span class="highlight">local field teams in all 12 districts</span> with <span class="highlight">custom-built analytics technology</span>. The result: comprehensive price intelligence at a fraction of international pricing, with the depth that only local knowledge can provide. <span class="highlight">Price Pulse</span> is built for Mauritius, by Mauritius.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. PRICING AUDIT METHODOLOGY ============ -->
+<section id="audit-methodology">
+  <div class="container">
+    <div class="section-label">Section 11</div>
+    <h2 class="section-title">Pricing Audit Methodology &amp; Framework</h2>
+    <p class="section-desc">A structured, panel-based audit approach modelled on Nielsen Retail Measurement Services — ensuring statistical rigour, month-on-month comparability, and actionable intelligence.</p>
+
+    <div class="two-col">
+      <div class="col-card">
+        <h4>Panel-Based vs Census Approach</h4>
+        <ul>
+          <li><span>Methodology</span><span class="val">Fixed Panel</span></li>
+          <li><span>Industry Standard</span><span class="val">Nielsen RMS</span></li>
+          <li><span>Key Advantage</span><span class="val">Month-on-month comparability</span></li>
+          <li><span>Panel Size</span><span class="val">40 fixed outlets</span></li>
+          <li><span>Rotating Sample</span><span class="val">Additional outlets for validation</span></li>
+          <li><span>Statistical Basis</span><span class="val">Consistent measurement points eliminate sampling noise</span></li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Audit Panel Design</h4>
+        <ul>
+          <li><span>Outlet Types Covered</span><span class="val">All 5 types</span></li>
+          <li><span>Districts Covered</span><span class="val">All 12</span></li>
+          <li><span>Weighting</span><span class="val">By population &amp; retail density</span></li>
+          <li><span>Urban/Rural Mix</span><span class="val">Proportional</span></li>
+          <li><span>Outlet Selection</span><span class="val">Stratified random sampling</span></li>
+          <li><span>Replacement Protocol</span><span class="val">Like-for-like substitution</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:40px 0 20px;color:var(--navy)">Weekly Audit Cadence</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Week 1</div>
+        <div class="timeline-title">Audit Planning &amp; SKU Selection</div>
+        <div class="timeline-desc">Define target SKUs for the cycle based on competitive signals from previous audit. Confirm panel outlets across all 12 districts. Brief field audit teams on focus areas and any special collection requirements. Select priority categories for deeper competitive analysis.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Week 2 &ndash; 3</div>
+        <div class="timeline-title">Field Data Collection</div>
+        <div class="timeline-desc">Trained field auditors visit the same panel outlets every cycle. Prices recorded via mobile application with photo-verified price tags. Real-time GPS validation confirms auditor presence at panel outlets. Automated outlier flagging catches data entry errors in-field. Coverage spans all 5 outlet types: supermarkets, hypermarkets, corner shops, convenience stores, and wholesalers.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Week 4</div>
+        <div class="timeline-title">Dashboard Goes Live</div>
+        <div class="timeline-desc">Price Pulse dashboard updated with latest audit data. Interactive competitor % comparisons with visual up/down arrows. Regional heatmaps, brand trend lines, and anomaly alerts all refresh simultaneously. Client team accesses results in real-time via the Price Pulse portal — no waiting for static reports.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">Quality Assurance Framework</h3>
+    <table class="data-table">
+      <thead>
+        <tr><th>QA Layer</th><th>Method</th><th>Timing</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Photo Verification</td><td class="mono">Mandatory price tag photos for every recorded price</td><td>In-field</td></tr>
+        <tr><td>GPS Validation</td><td class="mono">Automated location confirmation at each panel outlet</td><td>In-field</td></tr>
+        <tr><td>Outlier Detection</td><td class="mono">Statistical flagging of prices outside 2 standard deviations</td><td>Automated</td></tr>
+        <tr><td>Cross-Outlet Check</td><td class="mono">Same product price compared across outlets for consistency</td><td>Processing</td></tr>
+        <tr><td>Month-on-Month Delta</td><td class="mono">Changes exceeding 10% flagged for manual review</td><td>Processing</td></tr>
+        <tr><td>Panel Compliance</td><td class="mono">Track % of panel outlets successfully audited per cycle</td><td>Reporting</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="font-family:'DM Serif Display',serif;font-size:1.4rem;margin:30px 0 20px;color:var(--navy)">Audit Data Outputs</h3>
+    <div class="exec-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="exec-card blue">
+        <div class="stat">% &Delta;</div>
+        <div class="stat-label">Price Change vs Prior Period</div>
+        <div class="stat-detail">Month-on-month and quarter-on-quarter price movements for every SKU, brand, region, and outlet type.</div>
+      </div>
+      <div class="exec-card gold">
+        <div class="stat">vs Comp</div>
+        <div class="stat-label">Competitor Gap Analysis</div>
+        <div class="stat-detail">Percentage gap between Maurilait pricing and each competitor, with directional arrows showing whether the gap is widening or narrowing.</div>
+      </div>
+      <div class="exec-card green">
+        <div class="stat">RDI</div>
+        <div class="stat-label">Regional Disparity Index</div>
+        <div class="stat-detail">Coefficient of variation across 12 districts, identifying regions where pricing is out of line with national averages.</div>
+      </div>
+    </div>
+
+    <div class="insight-box">
+      <h3>Why Panel-Based Auditing Works</h3>
+      <p>The global price intelligence industry (valued at <span class="highlight">US$1.41 billion</span>) is built on a fundamental principle: <span class="highlight">consistency of measurement beats breadth of coverage</span>. Nielsen, the world's largest retail measurement company, built its entire methodology on fixed panels. By auditing the <span class="highlight">same 40 outlets every month</span>, Exotica eliminates sampling noise and delivers data that Maurilait can confidently use for pricing decisions. A 1% price improvement from this intelligence translates to an <span class="highlight">11% margin improvement</span> across the portfolio.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. ABOUT EXOTICA ============ -->
+<section id="team">
+  <div class="container">
+    <div class="section-label">Section 12</div>
+    <h2 class="section-title">About Exotica Agency</h2>
+    <p class="section-desc">Founded in Mauritius — deep local market knowledge, on-ground brand activation, and data-driven research.</p>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="data:image/png;base64,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J554oib6Lr74Yq1xoGKoZTANDGMIO79JmU0DA7Ldckuz1BgjpuXG18OprIUnyzVIjK1fv77MNDBILZNdhYjGvUZEn/j8vvfee6tbWLduXfVIINixxx7rzj//fHfppZcqwdhOMQiiGreHEmBgGACoH7idedRRR7lGjRppYPbkk0+6jh07urZt27oHH3zQNWnSRK9HFH3wwQe7qlWrul133VWBMQYw4hsodl2AuOKKK9yKFSvct9+W7QSCpiGdyx1xjTkvlYRdQPWEIBgQzK++/NK9/PLLSgyfUEy4jdrD6afXc5dddpm77777NOuJiLdp08Y988wz7u6771ai3X57S60b/OUvf3GHHnqoq1GjhhJrjz32UI61YMsHhU9+A2RAQCrR5ZyvZ69ebsiQIa5///5auSN9wbWp5N13370K1p/+9CctSgGIxRehSvKBYA0AgZqGNv6IY7D8pUJE7kmcIcdAJcHtEDsEwQeCgg8RdZUqVTILMcmAmHfccYd75ZVOrlu3bq5Xr15u4MCB7t1333Ujhg/XzCeVuhdffNG1bHmHu/rqq12rVg8qYJRAzz33XK208Yn0QGzOa1IGSMcde6xK0Z///GeVqieeeMK99957buzYsVqIGjVqlBsxYoTGOVy3b98+rkuXzu6xxx5TJuCaOBqUZX274YNiEvjwww/r2tEEOVTUPSG9U4eI7CsiZSOUlIH4KdFzAGFgAATE3WeffTLcA6HQ1aial156SbkRrnz99dfdq6++4t58801VZ6iNV199VYHs0aOH69mzp8727dsrGA899JACxf7PP/+8qoZ9991XDS8gE8lff/317pZbblEwBwx4T4lPNY7aNf7/hAkT3Lhx49zo0aPd+++/795++229Htfnmm+88YZKJueCmfzI2ySD9aAquTeYEyBYP+68P6AtNA7pXmbQ9pI4MsdAGiBwSPhwAsTnGza4uXPnagUO8TW1xKJIL0NEiMniAYS/CwoK1MCzHakYP368zkmTJrmSySVuzJgxbsjgwapaIGDR2CIF+7bbblMObteunaqYV16JQB0wYIBy/sSJE/UcgFA6c6abPn26ggEwAFJYWKjSAkG5F+6hT58+Cgh2pHbt2m6nnXYqo6IssBtTWKh08bVBOCrMRYnI7iJSFB6YNv71r3+VIXquaTd1ZZMmGQNqauPaa69VACA4i0Uqhg4dqu7uyJEjVX0Y9zIhXOmsUjdr1ixNLTBnzJihxEXXw83Dhg1T8FA3HA+AnGPatGlu5ozpbuqUKXqMAcF3zgMQY8YUqoriXNwTqopzAkqnTq+4Sy65RO/b3GCbAHHOOee4pUuXaixla2b9YZUPGkPrkP6ZISJNEkfkGBR3MEYhwdNn5Dlxc6Q4MJymv/FGrrnmGlUBLBTOgwOHDBmsQMDpqAwjIgSbARClM91HH32kkSyfTJJv0T4RYfnOhND8xmR/PhWE0lI9D3+bVIwfP04lAgBRUQCCJMEcBT16uM6du7hmzZq53//+9xn15LvS999/f0IajAZsg2b+gNYh/TNDRN5M7J1jgHAuAx1OuymAgMi4gb67SjoZ3Y00MAFj8OBBbuTICAj0OdxuQBixZ8+e7ebMmePmz5vnFixYoBNAPvzwQ91uk218IkGzSkv1OL4DhG6bNUvPGwExXoGACZhIJmqKe0JV4kzce++96rH5UTvrwZ2GoSB6lE2IbITN0J2F1iH9dYjIUSKyKrF3yki1DRWAYqBhJ9Cj3DhchLE+44wz1Miix5ksml4juBLV5BvWhHqKCQnhITbnZvKdkibT38Z+gBABEUlGVkoigLEf2B5AMC8KFYW94N66dOmiXlHNmkdn8lqmlv74xz/qNVkrtRefUflOUBvQcRU0D3EACNrTKxx4AbkInTZNIuCSFSuWazHebASRK5Et7iTcBtcBBOoAPa9AjB3rJk2aqDocQGxm1Us0TUKYBo59zwIQSQKEVxBQU9OnxwBHQJhq4vowBGqJe8Po472hXmvUOCzhNWH3rrrqKl1vBEKUX/PpgEYIGxCgeYgDQJTN46YMXLOQ2OVNA4K5cuVKdVcNCLgK/x4Pp3v37hlPCSBQCxAEiVBPZ+JEVR3YDFSV6f7p05O2wCTFQOE725GCSBIiO2PHTJs6NWP0J0wYrxIxfPgwtVOoJRyJTp06uWeffVZVKHbgD3/4Q0YabHbu/EamCGbrDWnxj3/8I0FLaB6CQL2hwhY3DE6uKDrXtBtCbDGAtE+yCAuKMHxt27bRQA6DjYcyaNDAWCI+UK8Hb6Zk0iQ3ccIE/Q4w5i0xAYNPJXhpqfswloSsBAAQqija3wy2AjFtmp6LcwI6dmnEiOGqlrgXVBIxC6mQxx9/XN1jWjb9yB13FnWmklAOENDOTwhC80S9QkQaJSieY+TKKeWa3AwiScc2uhbuatr0+kydgMmi8M/5HbWEywgRzH01zwkpmFQySQmGalIgpk+PiZ2VBDXIsRE2aeB3tpeWRttQSQYGamlyHEMAOtfF9UUtIZ0AgUp64YUXNC4hig+BwAFBdXFu6jAREJGxZv0+TVICvEY+EM8lfs0xCNnTkA6nf3G+o58fe/RRzR1hmJECE22MN3kl/HWkAp0MEQABNcFUiVDiT1HvBuJpTBCrIl8dmS1g2nffftjfTI4ziQJYJAIgkFzu4e1+/TIRdoeOHdxzzz3nWrS4NQME9499ILVCLg2vD+8tWn86nVLU03M+EBUGceYt5QuETcQR4rEIOJ9F0c5oiTlcQdouo8g6shFIB8TAcGIXJk8uidUPuj5SN7NnR4T3vSbfe2KGHhXq0eIO86Q4nwV0JhHYJ/OYUJeAAcc/+8wzmiqB8H6qhsTjAw884G644QYFM1LfkTbwmRLa4T0F6mmsgkCmNUHxHMM6MkKil51JoL74/HMlGvkaFsQiWQzZTC5//PHHKzjmJvbq1VNVAaDxSQrDYgkIBvGYEWHn6oMp0cMpUSzB5EGVhQsX6qdtswdYFsbbiD/mxeAhHdgL85qwT1zXgjnui/vHWJMqJ0VusRCTSPvOO+9UiefYdWsBIcuQPj2gYeg9gQHSUCfcmjbMPvjcnrxIWUnhZrgwNgJRZ3GoGvTuMccco0A0bNhQpYEZpRE6aaGGBCEgXXHF5aqfBw4YoLYCgkE8iAmxFy1apJ9pE8JHoHys+zEp2bINYDTeiCUHu4LKA3RL/OE19e7dy3V/s7tKBPdGmpz7QyIsuq5Zs6YyDaqJY7ETRpMQCGZKcFcHibg6sTXH+Oc//5lRS2knT5vs98UXn+txiD7cwo2+VVCghR9Em5w/aoCEHVlYEoNRtBp1c1u9AnV2W4sW7vXXXlN1Nfejj1QKfK5ftAhgkkAYWDzKxeQ7IMydG6uzWD1hgyA8xG7durU+YYS6IYbo1r27EhowkGqysFYXr1q1inpSHNu//zvKaJZ5TaMVtCBP5w8RuQqJaJvYmmPka6hDIJAIJgvHG0EFdXr5ZY0nKBSRKbVUAukORN6KO2Hljf3RxzxFRMxBvQKALaCDsB/Hasiia5MK24ZdQcXhAGAP4HwIjLo89dRT1XmgeIRnRx2btPqLL7ygUTUqFDX117/+NXNvqCncWiR64MABKlWUjG39aUCkGOw2AFGQ2JoyrHc1Q+AUFZV2UQOCBCHdDaShuWH0LvqUpB9PB+EhsR1vBGJTwAGohg3ru9NOO1UNutWqmehkqmxEswRYeFwQFrVlHlNylupvuMIAjnfWtGlTTa9QNkXiILyl543IMAQSybN62AYLOKlvmFqqVesY98gjj6hahaHw5CLX1Zh2nVu/IQkEQXFgsHvk7TGF2dYQgDQgmAbEZ58tV5UybNj76p306PGm1qcxcuh+DCMVNxYM1xFURf78QFdQ8JaqC4JBwCNHRSUOgCgCYW8wpGrU4zjDYg0+uS4qBe4+4cQT3eWXX67XNmJrjcQzviT0SHNrpjh+mogKHefA1lGuhWGIH5BOJIWCEwyFtIW5pnCG2VgwAIjpCaqnDA4KiRwCEP5u+1AUAggeheIm8UpIJXTt2sXttddeWmUjaoboLIhPbAnBHUa6ZcuWutjmzZq5Jo0bq7TQzYHawKCjqgwUqmiFhaN1jh0zRgHnfEhf7drHu7333ssdcuihWr2zfiaiYs6DDQIoSqnUHGhWIA9GvZr7BAjuj7QL98SxPLEKMEja6NGj1D4gEX6aIw0Q6BEAMR0gFiSonjI4KDxZCEIuIGxyQ+jy4uJinRg/VAIJPzjX1Ma7/fu7Rx5p584880z1RtDbGHbUA3+T5aR2DHE4nlwVIOAOQxgMPsSHO7EB/A2hkSL0+YEHHKAgUh2EozkOu0DnCI4DkTOpbhgEg430NG/e3N18881qS1CvuNYcy8M2ROXYBaSadbFGv8sxDQy0RADEAoBYkaB6ythYINK284m+tkI9quSggw52nTt31hwSagUCIgkU7CE+3A/Hw53YBFQFwGC4kYqDDjpIict+eDJ0dxAcAkBhnM6GeNYeA4hwODYGYFA/cHaVKrtmPDQkBHCwV3RwUHW7+667VNrwoAC4Z8+3tB6OjdHSbUmJSjpri2xEsu+3LBAb3HffZTs8wAAgkonylBEBUVbEQoKHgPj7wAW4jiyEiYEjQsVIE0jBTYCBwaNhAIlA5aASWCh1AHS6NXxhM+DeBvXr67749hCLWAWbAJdCJP7G7qBmkCTAQ4IiZ6Ch22mnnd2BBx6gIAN+vXr1Mk4BXE/aHlVEQMe9wkS42tglmMLqFwDBtYhJWLcPxNqKgfgKIMr2fAQjTSJCQqfNcF/6fcxthOvhKnQshAMExBuuwquhOwOjiI9OeoSEGwsHPAiI4cSlxOuy5jDU3PBhw1Q9mKvKeTn+hBNqqx04uU4dtQU947QFkoVkYDdon8GbAgC2AZx1mXCfxEDcnwEBaJFjEZVWkWhq1nhNYRO2LxUpQHwNEBVW5XIBUZ4bq0B4bhuTGyLvhDEmSYaq6NunT8ZuIBmAgVQQpZJ7AhRabNj/iSefVC+Lv+E+Fs++fXr31noGXMu5UYEEeICBVHAsgAEW/VMQEm/s7XfeVoDvuusubWKg6YweK4A6+5xzVNVRKyH2QYpHjYomoODBYbdIYgI2YHD/PIzDOssDAtr4zWdgABALE1RPGbmAsJPmmtn9opvgZtChxBFwGXqbSBbiIxUsBImhKoc7C9daLRuPBUJDVICA8HAjARm+PYART6AqCO4sv0T8gErhOqg8K8W+99676hxwPOfGeeDc2JhHH33UtW3TxnXs0EHPidopKhqr0mASgV3COSB+wNFAGmCA1atXJdWSb7QzElHGWC8EiBkJqqeMNPd144CIpIGbIVEHAeAk9HW7tu0UBEt1T5kyWT0RJGTUyJFu0MCBahwNCAMBgkIQOBEiIB2oPOKI2XPmxNH0PG00gFAQlOtyDCkVwEO1cT5AAgTcZewMn6RhkC4rTHGPnMeCzyOOOEJtysABA12fPr31nEggMQTSEEqEzlgqUtzXGQBRnKB6yiivMhcSPw0I8yL4RIfCYWRZWQxuokmE3zbjV874nWMKR4/O9ClZE4H1I7HPxIkTdDu2wbKxSCDqCT8f0IqLiqMi06RJei4CRyQEoCAwksg2zgdDoEqzPU9jFAwkGmnGkHfr3k07E1FfXM/U0po1q8sAYeopJaArBojcDw7HI7VzIw8w0oCgbl1SEjWDYfAwyMZx1hQQFW+orkUVNL8YhNrRGkNcT4gIHUXS7Ac4ERBRwo9zsR0Jg5stg5stFEX9TUgO5zeArejEJ9sJOgkSUVG4sbjBuNXv9O+vkoXNIo3DOglemWsDySA9Th4qJcXRGyAeS1A9xygv6ZcLAJshZ5AFHTNmrLvwwgu1exogiuNGMhZuNQe/+E+amm1Wb2CS5Js5Y0ac0oh6n9iX7WRh2ceAAOiRcdMaHG7nytQm5s3TWrdV+fwqHufl+XCORYrwzqKswL2q6qjkcX68QgOBuWZNBEqoplKSfo8BxPWJrTmGnwYPZ3kghMGNzU8++UQTdmed1TBREmXhUW9StqKmhaC4kWxRnNZm8htEot2GOW3aVCUeACxZslj353wW+eLaYkvGjytWSTBQzcPCuFsbDhJJjduOLyou1mOZSDEZWqssYqO4Hs8JGuHD6a89JQ1+PUDUTWzNMcrr7kuooQqkwW6M3/A48O0xdKgNgIDDIbxV3uBu//VwiL/VFSCaqZ0o+4rqilxXbBGqiXNBSLgZ9QEHw9WoQM69YP78jGTojK8JoNYlgj3h/rAjpGDIR5FeISuAg8B1ACAJBJ9ZUGz90DClF7auvm04sTXHsFJpLjAUhJTffAAijyIrqngxuIDoXDWkxcVuesYOfOg+jOvNPhB+lY39MOa4lCQSAYLjqMgBBKABFqrIOvdwVwEFcPjN1BzENJcXiTC7YI4CIOKpca/HHXecplzYj/cGAgAT+2dgZNVTUipg2vABlswLHEWkJPwlHBvTPOADsyaQBv/mxowdo0ER6Q5rr4ewahPowCgt1cVCMAgUqhKIZe021ueEBLAPr2cACI5HWqyzHIkYOmSISpIPhNkcrgtIxUVFegwAWscfGWO8PBKG559/nqpXiI9t4DMCIgtCNLNA8DcVy4Cuk/wujpcSv+YY5RnstO2+ffBvRr+vXeOmTJ2inhPPraFrhw2P3MZM557XVjlnzuyoKyM24hAdA4ltMXcXw2zEhUgAwTYNEouKIgIXF2tUDeBW1aNuzTm5JmqIfbAFEB8JIqAkzqDJjLwWuS6cDMAGBH+adCTByDJf+Ko6EenoA3FN4tccA92WZpD9ye8AYNMHwYCwG4MQJOuIUgnWCOCIqvFQfJc1ii2mZzrzmPw+rrhYwZgxc6buiyQBBGpm2TKAWKwgRsQt0mOYqDKO811UPd+4cYm+JqJ17ADBJ+kR8l70ZJEgpDoIEKQ0mCYVBoQPhn6P15/SOHCNDwSd4GUfgwxGeYFdOMsDwW4Sfc/bCGhppyeooKCHVvDgcogCFzMJrKza5lffAAyXFBUC8eBkiEpEDRioMytGWZQMoVGDpgIzoMYJR+wItgtpIIK3FprrrrtW80t4S0gEeSnsgwGx0lNPTFIdoVRAkyB+4MXxyY5wXvefoHqOkU8Tcro0JG8KMFgIRXvS2xR9WrdqpSrAf5DRGpH9Eqg9LzF16hSNhOFUiET21HqgIC77AhB+Pw/E0Khwyy3NNUdlEsR+2vc6dqwyAEBglMk9kbXFxSZhSDoeT4l6xbbbbKPnpE3IlwibgJKViKx0pKiluQkQYiBaJfbKMdLa8sOZCkTAHdwcC4DbyP1TjEHcyXbSO0TCD9VABA4gEBhdP3Eiz7/x6FWkqthOHgrf/pprrta8ERlZuB71QrWNKNhq27fffnumtswELKuFIBEwAfV0ck6UWKnMASLpGCp79pgw14TzYSaVjBVZ9ZTmPTFT+l5bhTgAxHEiUvbJu2D43lOuaQY6NNL+jMR3tepgFoi489T/lVdeqQRo3/5FbUSDMHA1xINgmZb82EDDzQCFW8ljVSTiKBiRQeU86HRqDjQmUAPp3btPJs3BtKh79KhRqr6iVvwCNczsf0PTpu6E2rWVUVChAEFbPvfDGmCmDBgJW5G0Fymd4F9C8xAHHfm+pw+jbcFJ2jQQIHSaNBgQ3ODsWbOVSFYRI5lGPYDmLtLW6GpcTtPxcO7owsIMF7Od/bAxqDcKPLiXFHUoiUI4tiENcDcekKkvbbEcTbNBoQJhHX5kZHkeAiCoUyBN9tIUujzIMeHBQfQsCFkgVqxIgrBy1aq0aLpfSP/MEJGmib1zDIw2qdwQgMwMgAhBMCAUjNWr1SCSu4HjUCMESxTmqZZRt4iyonTS9Ve9zVM7qCD0uNqHk05SYtFqwydAUJPGu7FuDz65BuqP5x2iR8W6uzdef109NmwNqXEeOAFYYhu6RyixYqCp2AEEnzAJBMdGGBBlJSIb5K3fQEWuzMOMTUP6Z0b8IpS8Xv0Q5Z6ih/ZspqmkNG+Jz4xhW7lSn845/PAjVCL2229fLaHCwfXr19faNOoLwlM7xijTFAZX0hkI1wMgx+6xR/S2Get7Agi2m5QgdRhb1BfdGXXrnuaaNGmscQxOA8Rn0r0BE7CfvbHGXviFmqPRzJwNXzWFtsLASJEGaFz+qyD4NzOJo3IM9B16zyd+eSDkAoJJPEHOyQgK5xJbwI0YygceuF+JYw1m7EcLDJzO37y9Bq5FHfE3xN5l16jubLVnCGpvu8H74XjAgbD2O+BjZ8glEbghXYAAsKg4gOAe8LYgeigRTJ4T9JkM5yVl3BvSvcwQkYNFpOyruFKG2YpwpgFh3BECAUcRBeOFQJTtt99BCQ2RkQwWTqsM9W2IhVE3NQH3YzhrHHaYfh55xBEKYKNGjbUNBttD3xOVQJoOkB6O4/wAxnekxLr6OB/FHoCglQam4HpIA58AgjrkfgEhFQjPlWWdKQFcKTQO6Z468nVlGfTEQvB8gDC7YADYJxMuQyogiKkWCEZ3ON0SpvPtZSR8h0DWg4Rdoc8IlYM6ww7gOfGKCSQLdQahjahGfAOCbRAeLwsQAJ3t/M5+9MSSoCRIBAiiamYIiB9X4F36nhIj1WXNNeL//7Y2cYYcw14flwUiHQTfeBHwwDlJkV6hRtvekGz9p7i0ENFeRgIh6UvibTQXX3yRuruRvo96kvg879xzNXgjH4QdYTseFc1qPHMBQTknWVSaz1CFnBf1Rk8snwYS0zrRkQbuH8IbED4gBgSf0CLMssY03bh/lSMitybOUs7AGPlSgLuajaSzIPhghEaOfQnEIDK8ABhmXAmm8KbQ0+h2PCWMNx4OQR8eEAEYbidlS2IK2mTofcIdJSbA0HMcUkIbPX1TuKfWpFa9+gEqBdgFe6+UPSfH/QAYcQfrCYEwqYhmBEZooBnQNKRzhUNEdhSRd8KTpQ1r2/cNcygNGXd1VfTpizALgGgYS3s+wVrkIQRcikFFKvCkSGVAYHsk2N4mQ0TONqJqS4/wGw9LEsGjrrp26ZLp3iCC5rr0MmGPsCEWXNpzGdamT4oDj4oUCLUOmCcNkGXLPlXXPhzQEpqGdM5riMh5IpJq9sNhXpQZ5PKAgPimjvgkv4RxhvN4CITuOgCwB1RQV9gLAMKYwskk7yA0qRBiAerGPGZFTMDExSSJyGeXLl1dt25dlfhMXnBCxE7CkDQIQHB9c1HtIUUmTwZhO2hQxnFAYpAuonMIb3bOQCGOSokZ1kPLkL4bNUTk+cRZyxlU8bgR86F9X9okwTfY1Auef+451dGAgOqByK1atc48AmyPAaOmIAL6nZZL2iW1Ca1nT01Tk5zDSBMPkNGlgxu1wyS/hFtKIAYQHAtASBU9TDQxmHsbPqzC9XF3OSdMYr+hQtu1a6sSR4S+dOkSVVspDyoCxPMhXTd6xO9wyuutNQwSW9iJJAhZUPRz5UoVbxqLcSPtYRG4HW4mekYVoIoMCAumMLi4qoCBvkftPPX006rzcV8hmv0XLow9XhXbMNjkniA8E/CwI7RV4t5qVjV+WaNJBESHOXB9CSCJZdjX3qDJfQEgRh+AQ1eVAe3KfTfTxoy4XjEivEiuwQ0Bhg8E/zcCjwp1Re0Z41qlatXMoiAyxAQIjCueEAuEQBCFRUMUbAX5KIw3ETF9qy+2b+86dGiv7i/SheuLnjcwUGnsC/GxEzSEIXX2RkuOsf1NIpgcy294XACPK4yLDFOYtMBASCr1kXBAszL1hh86RORMEZkVXizXMMkABD4/WbpU213I9V/RqJFyrYk/uhlXExDI82CMSeJRvUMF+JyKQWXhbEdqUEnko1BRfMc93WuvPTOGF4lDinBzSZWQt0Il0UFOwAeRARbAzVMy4LENHAtD1K9/ZuZ1p7vvvlvmsS/c4BwgzIJmIR03yYj//fCa8KK5BmCggkimkfkksELdIAEsGg5kQaga6hCIN2oD7wQdz6JpxYfwlStH3GqPW7GNGAMASQJahwU2gaiaDC5q58ILL9BHsbATFHOwDwBH6gRpQG0hZUibbxe4DtIAoVGZ9erV1XNxTxwDCJbuCAc0glYh/TbpEJG7wwuXN6hKIdIQn5u3hVqEzISzIQ4BE+oDXY4nA7FQCRho1A3n4Di8KCYcj7sLGBhNOjp69ChQow3RARQDjaRQ9sRTQhIuOP98TX3gFgOqPSFqdsGibM5NygQguEcAbtCgoXpYF114oXpJaQMahXTb5MM5t9XGeFIMPCm8GRbIKcwA84nawSNBbRgQGHFqwqgnuBkimIqCUOZiMuFY3F9ru6EEOnToEFVxSNdLHTtq4cf6oqhFUM1D3ViG1lSS3Q9PEUFsJA5VV69uXVWT2KAzzjhTnYmw7GkjfsHMViHdNsuI/9lTYXgT5Q18a1QHXoeBwUQl8NwyHIsRpY0RG0GJEzVz3bXXqtuIisJDsSCPiSfUt18/zf9AZNQgPU9U3YjSITrtMnAuDcGkHfhONyAFIsBFykwlAQr3g3HHNiCJ5LoAgYlkU5nLNWKa/Hj/7IkRv6j3hfBmKhqkvNHfljrYbttt1ZACBEEXUkF1jEiYp4NuvukmDaZwH+FQOBa1BHi8lVI5fdEijVN4IAb32MDAv0dSiFnIhxFw4rURfBHDwBjEK8YY0YONVVQl0fiG1KCWUElIF8flGtAirxfrbo7hnKtMbj3fBKEN3Ft0OikN42xUEwYXQHAxH2rdWnNDBGIAheFFNTCpZ0Ngfc/GwoVKINSf1UfgemvJt2cpAIscGL/jyVlUT1BI5tbsAoabdIc9Wsz1OT5M4NmI104Np3JInx998GIVEZkd3mRFg85BMq7UhfnErSx4q8C99FJHDdaIskkn4EHhOgIMqQ0ahZEEVBEgLPf7T72UA1xPpwbpCOrdSKPVCSy6Z19+J0uL8UZ1wiAEb+Ssws4Lf8Rrvjqkx0864n/68UF4s/kMuBQOp4jfs1dP16FjRw3qcGnxegADm4He1xefeCDA/dZeybuY+I0OP2yG300OIDQH0PlhSbsIjOXuk2Wf6NsKCPCwAzQkoMrKG6z1e/9zjs09nHM1ecFHeNP5DgsC6dCwVAfRNtEzGVN89ojQSyIAli7Vv+mowB5gSCEojWL0KyEB7IcEAA7byMqyL03M/GZSwXUhftob7sMRr7FmuP4tasQe1Ua5t2kDOwKRUUWkqlEfcLY9qIINgNuJ1unugJsx7gSP7w8dqtHu4sWLtC6C/fh02bLoCaO4uw9XF+LTBBFmS8sb8dp+XM/ohwwRuUhEBoQL+T6D2jicSs2Dl6zA4agXOB6jj+qirk3soI9mlZQooT/7DCO+VusDGHI4nnPw6FRagq68ISKDReTicJ0/iyEiu4pIy3ybEfId1D7wYiAmdWGAgdBUxZgAh5ojJc1+cHxYO853iMhHRMoislu4vp/diJ9KelhEkk9pbMGDe43VULVwPT/7ISI1RKT1ppaQTTnirOlDInJkeP//cyPuErlRRCaGhPipBg+dx0/Y7hDe7y9iOOcOjf9TfO78wWYa8X/ZbSciB4X39YsdsdvLowHNRKTLxhSh8h2x2uHcXOO4n5Ub+lMO51z1OGK/TUQ6xNHskniWMfyxgbXf34+PaR6fY5/w/FvS+D+T4oSe89fukwAAAABJRU5ErkJggg==" alt="Irfaan Mooradun">
+        <div>
+          <h4>Irfaan Mooradun</h4>
+          <div class="role">Director, Client Relations</div>
+          <div class="bio">5+ years in FMCG brand strategy and activation. Mauritius-based with deep relationships across the retail and distribution ecosystem.</div>
+        </div>
+      </div>
+      <div class="team-card">
+        <img src="data:image/png;base64,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" alt="Ernest Moyo">
+        <div>
+          <h4>Ernest Moyo</h4>
+          <div class="role">Research, Technology &amp; Data Science</div>
+          <div class="bio">Platform development, data science, analytics infrastructure &amp; AI. Builds the technology backbone that powers Price Pulse.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:20px">
+      <div class="col-card">
+        <h4>Core Capabilities</h4>
+        <ul>
+          <li><span>Local Presence</span><span class="val">All 12 districts</span></li>
+          <li><span>Field Researchers</span><span class="val">24+ trained staff</span></li>
+          <li><span>Data Collection</span><span class="val">Mobile, real-time</span></li>
+          <li><span>Dashboards</span><span class="val">Custom analytics</span></li>
+          <li><span>Turnaround</span><span class="val">Monthly guaranteed</span></li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Core Values</h4>
+        <ul>
+          <li><span>Professionalism</span><span class="val">&check;</span></li>
+          <li><span>Communication</span><span class="val">&check;</span></li>
+          <li><span>Excellence</span><span class="val">&check;</span></li>
+          <li><span>Results-Driven</span><span class="val">&check;</span></li>
+          <li><span>Cost-Effective</span><span class="val">&check;</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13. SOURCES ============ -->
+<section id="sources">
+  <div class="container">
+    <div class="section-label">Section 13</div>
+    <h2 class="section-title">Sources &amp; Methodology</h2>
+    <p class="section-desc">This report draws on 100+ verified data points from authoritative primary and secondary sources.</p>
+
+    <div class="two-col">
+      <div class="col-card">
+        <h4>International Organizations</h4>
+        <ul>
+          <li>FAO — Dairy Price Index, Food Price Monitoring</li>
+          <li>IMF — Mauritius Article IV Consultation 2025</li>
+          <li>World Bank — GDP &amp; Development Indicators</li>
+          <li>UNCTAD — B2C E-Commerce Index</li>
+          <li>IAEA — Mauritius Local Feed Production</li>
+          <li>AfDB — Mauritius Economic Outlook</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Industry &amp; Market Data</h4>
+        <ul>
+          <li>Rabobank — Global Dairy Top 20 (2025)</li>
+          <li>Statista — Market forecasts &amp; consumer data</li>
+          <li>Trading Economics — Inflation &amp; price data</li>
+          <li>IMARC Group — Global dairy market sizing</li>
+          <li>Dataintelo — Price intelligence software market</li>
+          <li>NielsenIQ — Trade promotion analytics</li>
+        </ul>
+      </div>
+    </div>
+    <div class="two-col" style="margin-top:0">
+      <div class="col-card">
+        <h4>Government &amp; Regulatory</h4>
+        <ul>
+          <li>Statistics Mauritius — CPI, HBS 2023</li>
+          <li>US Trade.gov — Mauritius Country Commercial Guide</li>
+          <li>MOPRI — Government Price Observatory</li>
+          <li>CEIC Data — CPI weights</li>
+          <li>Mauritius Chamber of Agriculture</li>
+          <li>Ministry of Commerce — Acts &amp; Regulations</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h4>Corporate &amp; Digital</h4>
+        <ul>
+          <li>Eclosia Group — Maurilait corporate profile</li>
+          <li>Innodis Group — Competitor analysis</li>
+          <li>DataReportal — Digital 2025 Mauritius</li>
+          <li>Numbeo — Cost of Living Index</li>
+          <li>Platform Africa — Industry reporting</li>
+          <li>MCCI — Trade agreements &amp; consumer law</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin:50px 0 20px;padding:30px;background:#F8FAFC;border-radius:16px;border:1px solid var(--border)">
+      <p style="font-family:'Space Grotesk',sans-serif;font-size:0.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--exotica-gold);margin-bottom:8px">Methodology</p>
+      <p style="font-size:0.88rem;color:var(--text-muted);max-width:700px;margin:0 auto;line-height:1.8">Data collected April 2026 from publicly available sources including government statistical offices, international organization databases, industry research reports, corporate filings, market data platforms, and digital analytics tools. All figures represent the most recent available data at time of publication. Price data in MUR (Mauritian Rupee) unless otherwise stated.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <svg width="120" height="35" viewBox="0 0 120 35"><text x="0" y="25" font-family="Space Grotesk,sans-serif" font-size="18" font-weight="700" fill="#D4A853" letter-spacing="4">EXOTICA</text></svg>
+        <p style="margin-top:14px;max-width:400px">Market intelligence and brand activation agency. Founded in Mauritius with deep local knowledge and on-ground expertise across all 12 districts.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>5829 4167</li>
+          <li>exoticamauritius@gmail.com</li>
+          <li>Port Louis, Mauritius</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Deliverables</h4>
+        <ul>
+          <li>This Research Document</li>
+          <li>Price Pulse Platform (Live)</li>
+          <li>Strategic Pitch Deck</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Exotica Agency. All rights reserved. Confidential.</span>
+      <span>Know your prices. Own your market.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

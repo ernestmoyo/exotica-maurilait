@@ -1,0 +1,2174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exotica Agency x Maurilait Mauritius — Price Intelligence Partnership</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #FFFFFF;
+  --bg-card: #F8F9FA;
+  --bg-card-hover: #F1F3F5;
+  --cyan: #0077B6;
+  --amber: #D97706;
+  --maurilait-blue: #003D7A;
+  --forest: #1B4332;
+  --forest-light: #2D6A4F;
+  --coral: #C44536;
+  --gold: #B8860B;
+  --white: #FFFFFF;
+  --gray-100: #F1F5F9;
+  --gray-300: #64748B;
+  --gray-400: #475569;
+  --gray-500: #334155;
+  --gray-700: #1e293b;
+  --gradient-cyan: linear-gradient(135deg, #0077B6 0%, #005A8D 100%);
+  --gradient-amber: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+  --gradient-premium: linear-gradient(135deg, #0077B6 0%, #003D7A 50%, #D97706 100%);
+  --gradient-forest: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+  --gradient-progress: linear-gradient(90deg, #1B4332, #2D6A4F, #0077B6);
+  --font-display: 'DM Serif Display', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'Space Grotesk', sans-serif;
+  --slide-transition: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: #1a1a2e;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== SLIDE CONTAINER ========== */
+.deck { position: relative; width: 100%; height: 100%; }
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 80px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--slide-transition), transform var(--slide-transition), visibility 0s linear 0.7s;
+  overflow-y: auto;
+}
+
+/* Default: slide from right */
+.slide { transform: translateX(60px); }
+.slide.exiting { transform: translateX(-60px); opacity: 0; }
+
+/* Cover: scale zoom */
+.slide[data-slide="1"] { transform: scale(0.95); }
+.slide[data-slide="1"].exiting { transform: scale(1.02); opacity: 0; }
+
+/* Closing: fade with rotation */
+.slide[data-slide="14"] { transform: rotate(-1deg) scale(0.97); }
+.slide[data-slide="14"].exiting { transform: rotate(1deg) scale(1.02); opacity: 0; }
+
+/* Platform slides: from bottom */
+.slide[data-slide="8"],
+.slide[data-slide="9"],
+.slide[data-slide="10"] { transform: translateY(50px); }
+.slide[data-slide="8"].exiting,
+.slide[data-slide="9"].exiting,
+.slide[data-slide="10"].exiting { transform: translateY(-50px); opacity: 0; }
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+  transition: opacity var(--slide-transition), transform var(--slide-transition), visibility 0s linear 0s;
+}
+
+.slide-inner {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========== SLIDE BACKGROUNDS ========== */
+/* Cover: animated gradient mesh */
+.slide[data-slide="1"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(27,67,50,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(0,61,122,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(0,61,122,0.06) 0%, transparent 50%);
+  animation: meshShift 12s ease-in-out infinite alternate;
+  z-index: 0;
+}
+@keyframes meshShift {
+  0% { background-position: 0% 0%, 100% 0%, 50% 100%; }
+  50% { background-position: 10% 10%, 90% 10%, 40% 90%; }
+  100% { background-position: 5% 5%, 95% 5%, 55% 95%; }
+}
+
+/* Methodology: dot grid */
+.slide[data-slide="6"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+  z-index: 0;
+}
+
+/* Platform slides: circuit pattern */
+.slide[data-slide="8"]::before,
+.slide[data-slide="9"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,212,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,212,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+}
+
+/* District slide: topographic */
+.slide[data-slide="10"]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 30% 50%, rgba(0,212,255,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(245,158,11,0.02) 0%, transparent 40%);
+  z-index: 0;
+}
+.slide[data-slide="10"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-radial-gradient(circle at 50% 50%, transparent 0px, transparent 40px, rgba(0,0,0,0.015) 41px, transparent 42px);
+  z-index: 0;
+}
+
+.slide > * { position: relative; z-index: 1; }
+
+/* ========== FLOATING PARTICLES (Cover) ========== */
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  animation: floatParticle linear infinite;
+}
+@keyframes floatParticle {
+  0% { transform: translateY(100vh) scale(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* ========== STAGGER REVEAL SYSTEM ========== */
+.slide .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.slide.active .reveal { opacity: 1; transform: translateY(0); }
+.slide.active .reveal.d0 { transition-delay: 0ms; }
+.slide.active .reveal.d1 { transition-delay: 150ms; }
+.slide.active .reveal.d2 { transition-delay: 300ms; }
+.slide.active .reveal.d3 { transition-delay: 450ms; }
+.slide.active .reveal.d4 { transition-delay: 600ms; }
+.slide.active .reveal.d5 { transition-delay: 750ms; }
+.slide.active .reveal.d6 { transition-delay: 900ms; }
+
+/* ========== TYPOGRAPHY ========== */
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #1a1a2e;
+}
+
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--cyan);
+}
+
+p, li {
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  line-height: 1.7;
+  color: var(--gray-300);
+}
+
+.accent { color: var(--cyan); }
+.accent-amber { color: var(--amber); }
+.accent-blue { color: var(--maurilait-blue); }
+.accent-coral { color: var(--coral); }
+
+.gradient-text {
+  background: var(--gradient-premium);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.4rem);
+  color: var(--gray-400);
+  margin-top: 12px;
+}
+
+.tagline {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--cyan);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-top: 24px;
+  border-left: 3px solid var(--cyan);
+  padding-left: 16px;
+  min-height: 1.6em;
+}
+
+.stat-number {
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+/* ========== MAURILAIT MONOGRAM ========== */
+.maurilait-monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: var(--maurilait-blue);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--white);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.maurilait-monogram.large {
+  width: 56px;
+  height: 56px;
+  font-size: 2rem;
+  border-radius: 14px;
+}
+.maurilait-monogram.small {
+  width: 28px;
+  height: 28px;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+.client-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(0,61,122,0.08);
+  border: 1px solid rgba(0,61,122,0.2);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: var(--maurilait-blue);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* ========== EXOTICA BRANDING ========== */
+.exotica-wordmark {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.exotica-wordmark.large {
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+}
+.exotica-logo-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.exotica-logo-inline svg.star { width: 28px; height: 28px; }
+.exotica-logo-inline svg.wordmark { height: 18px; }
+.exotica-logo-inline.large svg.star { width: 40px; height: 40px; }
+.exotica-logo-inline.large svg.wordmark { height: 24px; }
+
+/* ========== BULLET LIST ========== */
+.bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.bullets li {
+  position: relative;
+  padding-left: 32px;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+}
+
+.bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gradient-cyan);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.25);
+}
+
+.bullets.amber li::before {
+  background: var(--gradient-amber);
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.25);
+}
+
+.bullets.coral li::before {
+  background: var(--coral);
+  box-shadow: 0 0 8px rgba(231, 111, 81, 0.25);
+}
+
+/* ========== CARDS GRID ========== */
+.cards-grid {
+  display: grid;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.cards-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.cards-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.cards-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 212, 255, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(0, 212, 255, 0.04);
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.card h3 { margin-bottom: 8px; font-size: clamp(1rem, 1.5vw, 1.2rem); }
+.card p { font-size: clamp(0.85rem, 1.2vw, 1rem); color: var(--gray-400); }
+
+/* ========== PRODUCT SHOWCASE ========== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 24px;
+}
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0,212,255,0.2);
+}
+.product-card-placeholder {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.product-card-placeholder .placeholder-icon {
+  font-size: 28px;
+}
+.product-card-placeholder .placeholder-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+}
+.product-card-body {
+  padding: 10px 12px;
+}
+.product-card-body h4 {
+  font-size: 0.85rem;
+  color: #1a1a2e;
+  margin-bottom: 4px;
+}
+.product-card-body .product-meta {
+  font-size: 0.7rem;
+  color: var(--gray-400);
+  font-family: var(--font-mono);
+}
+.product-card-body .product-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-family: var(--font-mono);
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+}
+.product-thumbs {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ========== VALUES BAR ========== */
+.values-bar {
+  display: flex;
+  gap: 32px;
+  margin-top: 36px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.values-bar span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  position: relative;
+}
+
+.values-bar span:not(:last-child)::after {
+  content: '|';
+  position: absolute;
+  right: -18px;
+  color: var(--gray-700);
+}
+
+/* ========== COVER SLIDE ========== */
+.cover-line {
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-cyan);
+  border-radius: 2px;
+  margin: 32px 0;
+}
+
+.cover-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+
+.cover-badge .dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 212, 255, 0.4); }
+  50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(0, 212, 255, 0); }
+}
+
+.cover-brand {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+  color: #1a1a2e;
+  margin-top: 40px;
+  opacity: 0.7;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.cover-logos {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.cover-logos .divider {
+  width: 1px;
+  height: 28px;
+  background: var(--gray-700);
+}
+
+/* ========== TIMELINE ========== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cyan), var(--amber));
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+}
+
+.timeline-dot {
+  width: 56px;
+  min-width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 2px solid var(--cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cyan);
+  z-index: 1;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.timeline-item:last-child .timeline-dot {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.timeline-content h3 { margin-bottom: 6px; }
+.timeline-content p { font-size: 1rem; }
+
+/* ========== PACKAGES ========== */
+.package-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.3s ease,
+              box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.package-card:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 0 30px rgba(0,212,255,0.05);
+}
+
+.package-card.featured {
+  border-color: var(--cyan);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.1);
+}
+
+.package-card.featured:hover {
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1), 0 0 50px rgba(0,212,255,0.08);
+}
+
+.package-card.featured::before {
+  content: 'RECOMMENDED';
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-cyan);
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 4px 16px;
+  border-radius: 100px;
+}
+
+.package-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #1a1a2e;
+}
+
+.package-list {
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.package-list li {
+  font-size: 0.95rem;
+  color: var(--gray-300);
+  padding-left: 24px;
+  position: relative;
+}
+
+.package-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.package-price {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--maurilait-blue);
+  margin-top: auto;
+}
+
+.package-price-period {
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  font-weight: 400;
+  display: block;
+  margin-top: 4px;
+}
+
+/* ========== DASHBOARD MOCKUP (Enhanced) ========== */
+.browser-frame {
+  width: 100%;
+  max-width: 1000px;
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.08),
+    0 0 40px rgba(0, 212, 255, 0.03),
+    inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.browser-topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: rgba(0, 0, 0, 0.04);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mock-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+}
+.mock-dot.red { background: #FF5F57; }
+.mock-dot.yellow { background: #FEBC2E; }
+.mock-dot.green { background: #28C840; }
+
+.browser-url {
+  flex: 1;
+  margin: 0 12px;
+  padding: 4px 12px;
+  background: rgba(0,0,0,0.03);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  font-family: var(--font-mono);
+}
+
+.browser-title {
+  font-size: 0.72rem;
+  color: var(--gray-500);
+  letter-spacing: 0.04em;
+}
+
+.dashboard-body {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 16px;
+}
+
+.kpi-card {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-cyan);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s ease;
+}
+
+.slide.active .kpi-card::after {
+  transform: scaleX(1);
+}
+
+.kpi-label { font-size: 0.7rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; font-family: var(--font-mono); }
+.kpi-value { font-size: 1.6rem; font-weight: 700; color: #1a1a2e; font-family: var(--font-mono); }
+.kpi-change { font-size: 0.75rem; color: #22C55E; margin-top: 4px; font-family: var(--font-mono); }
+.kpi-change.down { color: #EF4444; }
+
+.kpi-pulse {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22C55E;
+  animation: kpiPulse 2s ease-in-out infinite;
+}
+@keyframes kpiPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.chart-area {
+  grid-column: span 2;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  padding: 16px;
+  min-height: 140px;
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-title { font-size: 0.75rem; color: var(--gray-500); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; font-family: var(--font-mono); }
+
+/* Animated bars */
+.mini-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 90px;
+  padding-top: 10px;
+}
+
+.mini-bar {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.slide.active .mini-bar { transform: scaleY(1); }
+.slide.active .mini-bar:nth-child(1) { transition-delay: 0.4s; }
+.slide.active .mini-bar:nth-child(2) { transition-delay: 0.5s; }
+.slide.active .mini-bar:nth-child(3) { transition-delay: 0.6s; }
+.slide.active .mini-bar:nth-child(4) { transition-delay: 0.7s; }
+.slide.active .mini-bar:nth-child(5) { transition-delay: 0.8s; }
+.slide.active .mini-bar:nth-child(6) { transition-delay: 0.9s; }
+.slide.active .mini-bar:nth-child(7) { transition-delay: 1.0s; }
+.slide.active .mini-bar:nth-child(8) { transition-delay: 1.1s; }
+
+.mini-line {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  height: 90px;
+}
+
+/* Line draw animation */
+.mini-line polyline {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 600;
+  transition: stroke-dashoffset 1.5s ease;
+}
+.slide.active .mini-line polyline {
+  stroke-dashoffset: 0;
+}
+.slide.active .mini-line polyline:nth-child(2) {
+  transition-delay: 0.3s;
+}
+
+/* Activity bar in dashboard */
+.activity-row {
+  grid-column: span 4;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.activity-dots {
+  display: flex;
+  gap: 3px;
+  align-items: flex-end;
+  height: 20px;
+}
+
+.activity-dot {
+  width: 3px;
+  border-radius: 1px;
+  background: var(--cyan);
+  opacity: 0.5;
+  animation: activityPulse 3s ease-in-out infinite;
+}
+
+@keyframes activityPulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+/* Radar mockup */
+.radar-mock {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  position: relative;
+  margin: 10px auto 0;
+}
+
+.radar-mock::before {
+  content: '';
+  position: absolute;
+  inset: 15px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.radar-mock::after {
+  content: '';
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 212, 255, 0.06);
+}
+
+.radar-shape {
+  position: absolute;
+  inset: 8px;
+  clip-path: polygon(50% 5%, 90% 30%, 85% 75%, 40% 95%, 10% 60%, 20% 20%);
+  background: rgba(0, 212, 255, 0.15);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+/* ========== DEEP DIVE MOCKUP ========== */
+.deepdive-mockup {
+  width: 100%;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.deepdive-panel {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  min-height: 180px;
+}
+
+.deepdive-panel h4 {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+/* Funnel with animation */
+.funnel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.funnel-step {
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #1a1a2e;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.slide.active .funnel-step { transform: scaleX(1); }
+.slide.active .funnel-step:nth-child(1) { transition-delay: 0.3s; }
+.slide.active .funnel-step:nth-child(2) { transition-delay: 0.45s; }
+.slide.active .funnel-step:nth-child(3) { transition-delay: 0.6s; }
+.slide.active .funnel-step:nth-child(4) { transition-delay: 0.75s; }
+.slide.active .funnel-step:nth-child(5) { transition-delay: 0.9s; }
+
+/* Horizontal bars with animation */
+.h-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.h-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.h-bar-label { font-size: 0.72rem; color: var(--gray-400); width: 70px; text-align: right; font-family: var(--font-mono); }
+
+.h-bar {
+  height: 18px;
+  border-radius: 4px;
+  position: relative;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.slide.active .h-bar { transform: scaleX(1); }
+.slide.active .h-bar-row:nth-child(1) .h-bar { transition-delay: 0.3s; }
+.slide.active .h-bar-row:nth-child(2) .h-bar { transition-delay: 0.4s; }
+.slide.active .h-bar-row:nth-child(3) .h-bar { transition-delay: 0.5s; }
+.slide.active .h-bar-row:nth-child(4) .h-bar { transition-delay: 0.6s; }
+.slide.active .h-bar-row:nth-child(5) .h-bar { transition-delay: 0.7s; }
+.slide.active .h-bar-row:nth-child(6) .h-bar { transition-delay: 0.8s; }
+
+.h-bar-val {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  font-family: var(--font-mono);
+}
+
+/* ========== MAURITIUS MAP ========== */
+.map-container {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.map-svg-wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.map-legend {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: var(--gray-300);
+}
+
+.map-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ========== TEAM ========== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.team-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 36px 28px;
+  text-align: center;
+}
+
+.team-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  object-fit: cover;
+  border: 3px solid rgba(0, 61, 122, 0.15);
+}
+
+.team-card h3 { color: #1a1a2e; margin-bottom: 4px; font-size: 1.2rem; }
+.team-role { font-size: 0.9rem; color: var(--cyan); margin-bottom: 10px; }
+.team-detail { font-size: 0.9rem; color: var(--gray-400); }
+
+/* ========== CONTACT ========== */
+.contact-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 1.1rem;
+  color: var(--gray-300);
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.contact-cta {
+  margin-top: 32px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--gray-400);
+  font-style: italic;
+}
+
+/* ========== SECTION LABEL ========== */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+}
+
+/* ========== HIGHLIGHT QUOTE ========== */
+.highlight-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+  color: var(--coral);
+  text-align: center;
+  margin: 20px 0;
+  font-style: italic;
+  position: relative;
+  padding: 0 20px;
+}
+
+.highlight-quote::before { content: '\201C'; position: absolute; left: -5px; top: -10px; font-size: 3rem; color: var(--coral); opacity: 0.3; }
+
+/* ========== PROGRESS BAR ========== */
+.progress-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gradient-progress);
+  background-size: 200% 100%;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.15);
+}
+
+/* ========== SLIDE COUNTER ========== */
+.slide-counter {
+  position: fixed;
+  bottom: 16px;
+  right: 24px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  z-index: 100;
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+/* ========== NAV HINT ========== */
+.nav-hint {
+  position: fixed;
+  bottom: 16px;
+  left: 24px;
+  font-size: 0.7rem;
+  color: var(--gray-700);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 22px;
+  border: 1px solid var(--gray-700);
+  border-radius: 4px;
+  font-size: 0.65rem;
+  color: var(--gray-500);
+  font-family: var(--font-mono);
+}
+
+/* ========== GLOW EFFECTS ========== */
+.glow-cyan {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.glow-amber {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.glow-forest {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27,67,50,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.glow-blue {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,61,122,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .slide { padding: 40px 32px; }
+  .cards-grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+  .cards-grid.cols-4 { grid-template-columns: repeat(2, 1fr); }
+  .deepdive-mockup { grid-template-columns: 1fr; }
+  .map-container { flex-direction: column; }
+  .map-legend { flex: none; }
+  .team-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .dashboard-body { grid-template-columns: repeat(2, 1fr); }
+  .activity-row { grid-column: span 2; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .slide { padding: 32px 20px; }
+  .cards-grid.cols-3, .cards-grid.cols-2, .cards-grid.cols-4 { grid-template-columns: 1fr; }
+  .product-grid { grid-template-columns: 1fr; }
+  .values-bar { gap: 20px; }
+  .values-bar span:not(:last-child)::after { display: none; }
+  .cover-logos { flex-direction: column; gap: 12px; }
+  .cover-logos .divider { width: 28px; height: 1px; }
+}
+
+/* ========== PRINT ========== */
+@media print {
+  .slide {
+    position: relative !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    page-break-after: always;
+    min-height: 100vh;
+    padding: 40px;
+  }
+  .slide .reveal { opacity: 1 !important; transform: none !important; }
+  .progress-bar, .slide-counter, .nav-hint, .particles { display: none !important; }
+  body { background: #fff; color: #111; overflow: visible; }
+  html { overflow: visible; }
+  h1, h2, h3 { color: #111; }
+  p, li { color: #333; }
+  .card, .browser-frame, .deepdive-panel, .team-card, .package-card { background: #f8f8f8; border-color: #ddd; }
+  .mini-bar, .h-bar, .funnel-step { transform: scaleX(1) scaleY(1) !important; }
+  .mini-line polyline { stroke-dashoffset: 0 !important; }
+  .kpi-card::after { transform: scaleX(1) !important; }
+  .tagline { min-height: auto; }
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- ==================== SLIDE 1: COVER ==================== -->
+  <div class="slide active" data-slide="1">
+    <div class="particles" id="particles"></div>
+    <div class="glow-cyan" style="top:-150px;right:-100px;"></div>
+    <div class="glow-forest" style="bottom:-100px;left:-50px;"></div>
+    <div class="glow-blue" style="top:30%;left:50%;transform:translateX(-50%);"></div>
+    <div class="slide-inner" style="text-align:center;">
+      <div class="cover-badge reveal d0"><span class="dot"></span> Price Intelligence Partnership</div>
+      <h1 class="reveal d1" style="margin-bottom:8px;">Exotica Agency</h1>
+      <h1 class="reveal d1" style="font-size:clamp(1.4rem,3vw,2.6rem);color:var(--gray-400);margin-bottom:0;">
+        <span style="color:var(--maurilait-blue);">&times;</span>
+        <img src="../assests/logo.png" alt="Maurilait" style="height:36px;vertical-align:middle;margin-left:8px;object-fit:contain;">
+        <span style="font-size:clamp(1rem,2vw,1.6rem);color:var(--gray-500);font-family:var(--font-body);"> Maurilait Mauritius</span>
+      </h1>
+      <div class="cover-line reveal d2"></div>
+      <p class="subtitle reveal d2">Price Intelligence Partnership Proposal</p>
+      <div class="tagline reveal d3" id="typingTarget"></div>
+      <div class="cover-logos reveal d4">
+        <span class="exotica-logo-inline large"><svg class="star" viewBox="0 0 64 64" fill="none"><path d="M32 2L38 24H26L32 2Z" fill="#D4A853"/><path d="M32 62L26 40H38L32 62Z" fill="#D4A853"/><path d="M2 32L24 26V38L2 32Z" fill="#D4A853"/><path d="M62 32L40 38V26L62 32Z" fill="#D4A853"/><path d="M12 12L28 24L20 28L12 12Z" fill="#D4A853" opacity="0.7"/><path d="M52 12L44 28L36 24L52 12Z" fill="#D4A853" opacity="0.7"/><path d="M12 52L20 36L28 40L12 52Z" fill="#D4A853" opacity="0.7"/><path d="M52 52L36 40L44 36L52 52Z" fill="#D4A853" opacity="0.7"/><circle cx="32" cy="32" r="6" fill="#D4A853"/></svg><svg class="wordmark" viewBox="0 0 160 28" fill="none"><path d="M0 2H18V7H6V11.5H16V16.5H6V21H18V26H0V2Z" fill="#D4A853"/><path d="M22 2H29L33.5 10.5L38 2H45L37 14L45.5 26H38.5L33.5 17L28.5 26H21.5L30 14L22 2Z" fill="#D4A853"/><path d="M56 1C63.5 1 69 7 69 14C69 21 63.5 27 56 27C48.5 27 43 21 43 14C43 7 48.5 1 56 1ZM56 6.5C51.8 6.5 49 9.8 49 14C49 18.2 51.8 21.5 56 21.5C60.2 21.5 63 18.2 63 14C63 9.8 60.2 6.5 56 6.5Z" fill="#D4A853"/><path d="M70 2H90V7H83V26H77V7H70V2Z" fill="#D4A853"/><path d="M92 2H98V26H92V2Z" fill="#D4A853"/><path d="M112 1C119.5 1 124 5.5 125 10H119C118.2 8 115.8 6.5 112 6.5C107.8 6.5 105 9.8 105 14C105 18.2 107.8 21.5 112 21.5C115.8 21.5 118.2 20 119 18H125C124 22.5 119.5 27 112 27C104.5 27 99 21 99 14C99 7 104.5 1 112 1Z" fill="#D4A853"/><path d="M126 26L137 2H143L154 26H148L145.5 20H134.5L132 26H126ZM136.5 15.5H143.5L140 7L136.5 15.5Z" fill="#D4A853"/></svg></span>
+        <span class="divider"></span>
+        <img src="../assests/logo.png" alt="Maurilait" style="height:48px;object-fit:contain;">
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 2: ABOUT ==================== -->
+  <div class="slide" data-slide="2">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">About Us</p>
+      <h2 class="reveal d1">Who We Are</h2>
+      <span class="exotica-logo-inline reveal d1" style="margin-bottom:24px;"><svg class="star" viewBox="0 0 64 64" fill="none"><path d="M32 2L38 24H26L32 2Z" fill="#D4A853"/><path d="M32 62L26 40H38L32 62Z" fill="#D4A853"/><path d="M2 32L24 26V38L2 32Z" fill="#D4A853"/><path d="M62 32L40 38V26L62 32Z" fill="#D4A853"/><circle cx="32" cy="32" r="6" fill="#D4A853"/></svg><svg class="wordmark" viewBox="0 0 160 28" fill="none"><path d="M0 2H18V7H6V11.5H16V16.5H6V21H18V26H0V2Z" fill="#D4A853"/><path d="M22 2H29L33.5 10.5L38 2H45L37 14L45.5 26H38.5L33.5 17L28.5 26H21.5L30 14L22 2Z" fill="#D4A853"/><path d="M56 1C63.5 1 69 7 69 14C69 21 63.5 27 56 27C48.5 27 43 21 43 14C43 7 48.5 1 56 1ZM56 6.5C51.8 6.5 49 9.8 49 14C49 18.2 51.8 21.5 56 21.5C60.2 21.5 63 18.2 63 14C63 9.8 60.2 6.5 56 6.5Z" fill="#D4A853"/><path d="M70 2H90V7H83V26H77V7H70V2Z" fill="#D4A853"/><path d="M92 2H98V26H92V2Z" fill="#D4A853"/><path d="M112 1C119.5 1 124 5.5 125 10H119C118.2 8 115.8 6.5 112 6.5C107.8 6.5 105 9.8 105 14C105 18.2 107.8 21.5 112 21.5C115.8 21.5 118.2 20 119 18H125C124 22.5 119.5 27 112 27C104.5 27 99 21 99 14C99 7 104.5 1 112 1Z" fill="#D4A853"/><path d="M126 26L137 2H143L154 26H148L145.5 20H134.5L132 26H126ZM136.5 15.5H143.5L140 7L136.5 15.5Z" fill="#D4A853"/></svg></span>
+      <ul class="bullets reveal d2">
+        <li><strong>Founded in Mauritius</strong> — deep local market knowledge and relationships</li>
+        <li><strong>On-ground brand activation</strong> across the entire island</li>
+        <li><strong>Trained field teams</strong> in all 12 districts, ready for deployment</li>
+        <li><strong>Expanding into data-driven market research</strong> — combining field presence with analytics technology</li>
+      </ul>
+      <div class="values-bar reveal d3">
+        <span>Professionalism</span>
+        <span>Communication</span>
+        <span>Excellence</span>
+        <span>Results-Driven</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 3: WHY EXOTICA ==================== -->
+  <div class="slide" data-slide="3">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">Our Advantage</p>
+      <h2 class="reveal d1">Why Choose Us?</h2>
+      <div class="cards-grid cols-3">
+        <div class="card reveal d2">
+          <div class="card-icon">&#127470;&#127484;</div>
+          <h3>Local Presence</h3>
+          <p>Teams in every district of Mauritius, embedded in local communities</p>
+        </div>
+        <div class="card reveal d2" style="transition-delay:350ms;">
+          <div class="card-icon">&#128101;</div>
+          <h3>On-Ground Expertise</h3>
+          <p>24+ trained field researchers for surveys, intercepts, and activation</p>
+        </div>
+        <div class="card reveal d2" style="transition-delay:400ms;">
+          <div class="card-icon">&#128241;</div>
+          <h3>Digital Capability</h3>
+          <p>Mobile data collection, real-time dashboards, and automated analytics</p>
+        </div>
+        <div class="card reveal d3">
+          <div class="card-icon">&#128176;</div>
+          <h3>Cost-Effective</h3>
+          <p>A fraction of international research firm pricing with local depth</p>
+        </div>
+        <div class="card reveal d3" style="transition-delay:500ms;">
+          <div class="card-icon">&#9889;</div>
+          <h3>Speed</h3>
+          <p>Monthly turnaround guaranteed — no waiting months for reports</p>
+        </div>
+        <div class="card reveal d3" style="transition-delay:550ms;">
+          <div class="card-icon">&#127919;</div>
+          <h3>Tailored Insights</h3>
+          <p>Custom research designed around Maurilait's dairy and beverage portfolio</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 4: OPPORTUNITY ==================== -->
+  <div class="slide" data-slide="4">
+    <div class="glow-blue" style="top:-100px;right:-50px;"></div>
+    <div class="slide-inner">
+      <p class="section-label reveal d0" style="color:var(--maurilait-blue);">The Opportunity</p>
+      <h2 class="reveal d1">The Opportunity for
+        <span class="maurilait-monogram" style="vertical-align:baseline;">M</span>
+        Maurilait
+      </h2>
+      <div class="highlight-quote reveal d2">Know your prices. Outsmart the competition. Lead the market.</div>
+      <ul class="bullets coral reveal d3">
+        <li><strong>Price volatility:</strong> dairy and beverage prices fluctuate across regions and outlet types, creating blind spots for pricing strategy</li>
+        <li><strong>Increasing price pressures</strong> — import costs, currency fluctuation, and competitor promotions erode margins</li>
+        <li><strong>No structured pricing audit exists</strong> for dairy and beverage products in Mauritius — first mover advantage for Maurilait</li>
+        <li><strong>Need for real-time competitor pricing data</strong> to respond faster to market shifts</li>
+        <li><strong>Opportunity:</strong> transform from reactive to <strong>proactive pricing strategy</strong> with data-driven intelligence</li>
+        <li>Build a comprehensive <strong>price intelligence system</strong> covering all 12 districts, all outlet types</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 5: WHAT WE TRACK ==================== -->
+  <div class="slide" data-slide="5">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">Research Framework</p>
+      <h2 class="reveal d1">Price Intelligence Framework</h2>
+      <div class="cards-grid cols-3">
+        <div class="card reveal d2">
+          <div class="card-icon" style="background:rgba(0,212,255,0.12);">&#128200;</div>
+          <h3>Pricing Audit</h3>
+          <p>Monthly panel-based pricing audit across products, outlets, and regions</p>
+        </div>
+        <div class="card reveal d2" style="transition-delay:350ms;">
+          <div class="card-icon" style="background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.15);">&#128176;</div>
+          <h3>Competitor Pricing</h3>
+          <p>Real-time competitor price benchmarking across all categories</p>
+        </div>
+        <div class="card reveal d2" style="transition-delay:400ms;">
+          <div class="card-icon" style="background:rgba(124,58,237,0.12);border-color:rgba(124,58,237,0.15);">&#127758;</div>
+          <h3>Regional Analysis</h3>
+          <p>Price variation analysis across all 12 districts of Mauritius</p>
+        </div>
+        <div class="card reveal d3">
+          <div class="card-icon" style="background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.15);">&#127978;</div>
+          <h3>Outlet Intelligence</h3>
+          <p>Supermarkets, corner shops, wholesale — price breakdown by channel</p>
+        </div>
+        <div class="card reveal d3" style="transition-delay:500ms;">
+          <div class="card-icon" style="background:rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.15);">&#128276;</div>
+          <h3>Price Alerts</h3>
+          <p>Anomaly detection, competitor price moves, and promotion tracking</p>
+        </div>
+        <div class="card reveal d3" style="transition-delay:550ms;">
+          <div class="card-icon" style="background:rgba(236,72,153,0.12);border-color:rgba(236,72,153,0.15);">&#128247;</div>
+          <h3>Field Data Collection</h3>
+          <p>Photo-verified price entries from trained field workers across the island</p>
+        </div>
+      </div>
+
+      <!-- Products We Track -->
+      <div style="margin-top:36px;width:100%;max-width:1100px;">
+        <h3 class="reveal d3" style="font-size:1.1rem;color:var(--gray-300);text-align:center;margin-bottom:4px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em;font-weight:500;">Maurilait Brands</h3>
+        <div class="product-grid reveal d3" style="margin:12px auto 0;">
+          <div class="product-card">
+            <div class="product-card-placeholder" style="background:linear-gradient(135deg,rgba(236,72,153,0.4),rgba(236,72,153,0.15));">
+              <span class="placeholder-icon">&#129371;</span>
+              <span class="placeholder-name">Yoplait</span>
+            </div>
+            <div class="product-card-body">
+              <h4>Yoplait</h4>
+              <span class="product-tag" style="background:rgba(236,72,153,0.15);color:#EC4899;border:1px solid rgba(236,72,153,0.25);">Yoghurt</span>
+              <div class="product-meta">Flavoured &amp; plain varieties</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-placeholder" style="background:linear-gradient(135deg,rgba(0,61,122,0.5),rgba(0,61,122,0.2));">
+              <span class="placeholder-icon">&#129371;</span>
+              <span class="placeholder-name">Candia</span>
+            </div>
+            <div class="product-card-body">
+              <h4>Candia</h4>
+              <span class="product-tag" style="background:rgba(0,61,122,0.15);color:#003D7A;border:1px solid rgba(0,61,122,0.25);">UHT Milk</span>
+              <div class="product-meta">Full cream, semi-skimmed, skimmed</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-placeholder" style="background:linear-gradient(135deg,rgba(245,158,11,0.4),rgba(245,158,11,0.15));">
+              <span class="placeholder-icon">&#127863;</span>
+              <span class="placeholder-name">J</span>
+            </div>
+            <div class="product-card-body">
+              <h4>J Juice</h4>
+              <span class="product-tag" style="background:rgba(245,158,11,0.15);color:#D97706;border:1px solid rgba(245,158,11,0.25);">Juice</span>
+              <div class="product-meta">Tropical fruit range</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-placeholder" style="background:linear-gradient(135deg,rgba(0,61,122,0.3),rgba(0,150,200,0.15));">
+              <span class="placeholder-icon">&#129371;</span>
+              <span class="placeholder-name">Candia Cr&egrave;me</span>
+            </div>
+            <div class="product-card-body">
+              <h4>Candia Cr&egrave;me</h4>
+              <span class="product-tag" style="background:rgba(0,61,122,0.15);color:#003D7A;border:1px solid rgba(0,61,122,0.25);">Cream</span>
+              <div class="product-meta">Cooking &amp; whipping cream</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Competitors tracked -->
+        <h3 class="reveal d4" style="font-size:0.9rem;color:var(--gray-400);text-align:center;margin-top:20px;margin-bottom:4px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.08em;font-weight:500;">Competitors Tracked</h3>
+        <div class="product-grid reveal d4" style="margin:8px auto 0;grid-template-columns:repeat(3,1fr);max-width:750px;">
+          <div class="product-card">
+            <div class="product-card-placeholder" style="background:linear-gradient(135deg,rgba(200,16,46,0.4),rgba(200,16,46,0.15));">
+              <span class="placeholder-icon">&#129371;</span>
+              <span class="placeholder-name">Elle &amp; Vire</span>
+            </div>
+            <div class="product-card-body">
+              <h4>Elle &amp; Vire</h4>
+              <span class="product-tag" style="background:rgba(200,16,46,0.15);color:#E2001A;border:1px solid rgba(200,16,46,0.25);">Competitor</span>
+              <div class="product-meta">Dairy &amp; cream</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-placeholder" style="background:linear-gradient(135deg,rgba(34,197,94,0.4),rgba(34,197,94,0.15));">
+              <span class="placeholder-icon">&#129371;</span>
+              <span class="placeholder-name">Anchor</span>
+            </div>
+            <div class="product-card-body">
+              <h4>Anchor</h4>
+              <span class="product-tag" style="background:rgba(34,197,94,0.15);color:#22C55E;border:1px solid rgba(34,197,94,0.25);">Competitor</span>
+              <div class="product-meta">Butter, milk, cream</div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-placeholder" style="background:linear-gradient(135deg,rgba(124,58,237,0.4),rgba(124,58,237,0.15));">
+              <span class="placeholder-icon">&#129371;</span>
+              <span class="placeholder-name">Nestl&eacute;</span>
+            </div>
+            <div class="product-card-body">
+              <h4>Nestl&eacute;</h4>
+              <span class="product-tag" style="background:rgba(124,58,237,0.15);color:#7C3AED;border:1px solid rgba(124,58,237,0.25);">Competitor</span>
+              <div class="product-meta">Yoghurt, milk products</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal d5" style="display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap;">
+          <span style="font-size:0.75rem;color:var(--gray-400);font-family:var(--font-mono);background:var(--bg-card);padding:4px 12px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);">+ Del Monte</span>
+          <span style="font-size:0.75rem;color:var(--gray-400);font-family:var(--font-mono);background:var(--bg-card);padding:4px 12px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);">+ Ceres</span>
+          <span style="font-size:0.75rem;color:var(--gray-400);font-family:var(--font-mono);background:var(--bg-card);padding:4px 12px;border-radius:6px;border:1px solid rgba(0,0,0,0.08);">+ Pr&eacute;sident</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 6: METHODOLOGY ==================== -->
+  <div class="slide" data-slide="6">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">Audit Methodology</p>
+      <h2 class="reveal d1">Pricing Audit Methodology</h2>
+      <div class="cards-grid cols-2 reveal d2" style="max-width:900px;">
+        <div class="card">
+          <h3 style="color:#1a1a2e;margin-bottom:16px;">Panel-Based Audit Design</h3>
+          <ul class="bullets" style="gap:12px;">
+            <li>Frequency: <strong>Monthly</strong> pricing audits</li>
+            <li>Method: <strong>Field auditors + mobile app</strong></li>
+            <li>Coverage: <strong class="stat-number"><span data-countup="12">0</span> districts</strong>, all 5 outlet types</li>
+            <li>Panel approach: <strong>Same outlets every month</strong> for data consistency</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="color:#1a1a2e;margin-bottom:16px;">Data Quality &amp; Verification</h3>
+          <ul class="bullets" style="gap:12px;">
+            <li>Audit panel: <strong>40 fixed-panel outlets</strong> + rotating sample</li>
+            <li>Verification: <strong>Photo-verified</strong> price tags</li>
+            <li>Consistent panel ensures <strong>month-on-month comparability</strong></li>
+            <li>Anomaly detection: <strong>automated outlier</strong> flagging</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 7: AUDIT CYCLE ==================== -->
+  <div class="slide" data-slide="7">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">Audit Cycle</p>
+      <h2 class="reveal d1">Monthly Pricing Audit Cycle</h2>
+      <div class="cards-grid cols-2" style="max-width:900px;">
+        <div class="card reveal d2">
+          <div class="card-icon" style="background:rgba(0,212,255,0.12);">&#128197;</div>
+          <h3>Week 1: Audit Planning</h3>
+          <p>Define target SKUs for the cycle. Confirm panel outlets across all 12 districts. Brief field audit teams. Select focus categories based on competitive signals from previous audit cycle.</p>
+        </div>
+        <div class="card reveal d2" style="transition-delay:350ms;">
+          <div class="card-icon" style="background:rgba(245,158,11,0.12);border-color:rgba(245,158,11,0.15);">&#128202;</div>
+          <h3>Week 2&ndash;3: Field Data Collection</h3>
+          <p>Field auditors visit the <strong>same panel outlets</strong> every cycle across all 12 districts. Record prices via mobile app with photo verification. Consistent panel ensures month-on-month data comparability.</p>
+        </div>
+        <div class="card reveal d3">
+          <div class="card-icon" style="background:rgba(34,197,94,0.12);border-color:rgba(34,197,94,0.15);">&#128203;</div>
+          <h3>Week 4: Live Dashboard</h3>
+          <p>Dashboard goes live with latest audit data. Interactive <strong>competitor % comparisons</strong>, up/down price arrows, regional heatmaps. Client team accesses real-time results via Price Pulse portal.</p>
+        </div>
+        <div class="card reveal d3" style="transition-delay:350ms;">
+          <div class="card-icon" style="background:rgba(124,58,237,0.12);border-color:rgba(124,58,237,0.15);">&#127919;</div>
+          <h3>Audit Quality Standards</h3>
+          <p><strong>40 fixed-panel outlets</strong> every month for consistency. Photo-verified price tags. Automated anomaly detection. <strong>4 Maurilait brands + 12 competitor products</strong> tracked across all SKUs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 8: THE PLATFORM ==================== -->
+  <div class="slide" data-slide="8">
+    <div class="slide-inner">
+      <div class="reveal d0" style="display:flex;align-items:center;gap:16px;margin-bottom:4px;">
+        <p class="section-label" style="margin-bottom:0;">The Platform</p>
+        <div class="client-badge">
+          <span class="maurilait-monogram small">M</span>
+          Client Portal
+        </div>
+      </div>
+      <h2 class="reveal d1">Price Pulse &mdash; Your Command Centre</h2>
+      <p class="subtitle reveal d1" style="margin-bottom:32px;text-align:center;max-width:700px;">A live, interactive price intelligence dashboard replacing static monthly spreadsheets.<br>Access your data anytime, anywhere.</p>
+      <div class="browser-frame reveal d2">
+        <div class="browser-topbar">
+          <div class="browser-dots">
+            <div class="mock-dot red"></div>
+            <div class="mock-dot yellow"></div>
+            <div class="mock-dot green"></div>
+          </div>
+          <div class="browser-url">app.pricepulse.mu/maurilait/dashboard</div>
+          <span class="browser-title">Price Pulse</span>
+        </div>
+        <div class="dashboard-body">
+          <div class="kpi-card">
+            <div class="kpi-pulse"></div>
+            <div class="kpi-label">Avg Price Index</div>
+            <div class="kpi-value" style="color:var(--cyan);">104.2</div>
+            <div class="kpi-change">&#9650; +1.8%</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-pulse"></div>
+            <div class="kpi-label">Price Gap vs Comp</div>
+            <div class="kpi-value" style="color:var(--amber);">-3.5%</div>
+            <div class="kpi-change">&#9650; Narrowing</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-pulse"></div>
+            <div class="kpi-label">Outlets Covered</div>
+            <div class="kpi-value">156</div>
+            <div class="kpi-change">&#9650; +12 new</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-pulse"></div>
+            <div class="kpi-label">Alerts Active</div>
+            <div class="kpi-value" style="color:var(--coral);">7</div>
+            <div class="kpi-change down">&#9660; 3 critical</div>
+          </div>
+          <div class="chart-area">
+            <div class="chart-title">Price Trend &mdash; 6 Month</div>
+            <svg class="mini-line" viewBox="0 0 400 80" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="0,60 50,55 100,50 150,48 200,45 250,40 300,38 350,35 400,30" stroke="url(#cyanGrad)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <polyline points="0,50 50,48 100,52 150,55 200,50 250,45 300,42 350,38 400,35" stroke="url(#amberGrad)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="6,4"/>
+              <defs>
+                <linearGradient id="cyanGrad" x1="0" y1="0" x2="400" y2="0"><stop offset="0%" stop-color="#00D4FF"/><stop offset="100%" stop-color="#0099CC"/></linearGradient>
+                <linearGradient id="amberGrad" x1="0" y1="0" x2="400" y2="0"><stop offset="0%" stop-color="#F59E0B"/><stop offset="100%" stop-color="#D97706"/></linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <div class="chart-area">
+            <div class="chart-title">Competitor Price Comparison</div>
+            <div class="mini-bars">
+              <div class="mini-bar" style="height:70%;background:var(--gradient-cyan);"></div>
+              <div class="mini-bar" style="height:78%;background:rgba(245,158,11,0.7);"></div>
+              <div class="mini-bar" style="height:65%;background:rgba(124,58,237,0.6);"></div>
+              <div class="mini-bar" style="height:82%;background:rgba(239,68,68,0.5);"></div>
+              <div class="mini-bar" style="height:68%;background:var(--gradient-cyan);"></div>
+              <div class="mini-bar" style="height:75%;background:rgba(245,158,11,0.7);"></div>
+              <div class="mini-bar" style="height:60%;background:rgba(124,58,237,0.6);"></div>
+              <div class="mini-bar" style="height:72%;background:rgba(239,68,68,0.5);"></div>
+            </div>
+          </div>
+          <div class="activity-row">
+            <span style="font-size:0.7rem;color:var(--gray-500);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em;">Live Activity</span>
+            <div class="activity-dots">
+              <div class="activity-dot" style="height:8px;animation-delay:0s;"></div>
+              <div class="activity-dot" style="height:14px;animation-delay:0.2s;"></div>
+              <div class="activity-dot" style="height:6px;animation-delay:0.4s;"></div>
+              <div class="activity-dot" style="height:18px;animation-delay:0.6s;"></div>
+              <div class="activity-dot" style="height:10px;animation-delay:0.8s;"></div>
+              <div class="activity-dot" style="height:15px;animation-delay:1.0s;"></div>
+              <div class="activity-dot" style="height:7px;animation-delay:1.2s;"></div>
+              <div class="activity-dot" style="height:12px;animation-delay:1.4s;"></div>
+              <div class="activity-dot" style="height:9px;animation-delay:1.6s;"></div>
+              <div class="activity-dot" style="height:16px;animation-delay:1.8s;"></div>
+              <div class="activity-dot" style="height:5px;animation-delay:2.0s;"></div>
+              <div class="activity-dot" style="height:13px;animation-delay:2.2s;"></div>
+            </div>
+            <span style="font-size:0.65rem;color:var(--gray-400);font-family:var(--font-mono);margin-left:auto;">Updated 2 min ago</span>
+          </div>
+          <div style="padding:8px 16px 4px;display:flex;align-items:center;gap:8px;border-top:1px solid rgba(0,0,0,0.06);">
+            <span style="font-size:0.6rem;color:var(--gray-500);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em;">Tracked Brands</span>
+            <div class="product-thumbs" style="margin-top:0;">
+              <span style="font-size:0.65rem;color:var(--maurilait-blue);font-family:var(--font-mono);background:rgba(0,61,122,0.1);padding:2px 8px;border-radius:4px;">Yoplait</span>
+              <span style="font-size:0.65rem;color:var(--maurilait-blue);font-family:var(--font-mono);background:rgba(0,61,122,0.1);padding:2px 8px;border-radius:4px;">Candia</span>
+              <span style="font-size:0.65rem;color:#D97706;font-family:var(--font-mono);background:rgba(245,158,11,0.1);padding:2px 8px;border-radius:4px;">J Juice</span>
+              <span style="font-size:0.65rem;color:var(--maurilait-blue);font-family:var(--font-mono);background:rgba(0,61,122,0.1);padding:2px 8px;border-radius:4px;">Candia Cr&egrave;me</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 9: DEEP DIVE ==================== -->
+  <div class="slide" data-slide="9">
+    <div class="slide-inner">
+      <div class="reveal d0" style="display:flex;align-items:center;gap:16px;margin-bottom:4px;">
+        <p class="section-label" style="margin-bottom:0;">Analytics</p>
+        <div class="client-badge">
+          <span class="maurilait-monogram small">M</span>
+          Deep Dive
+        </div>
+      </div>
+      <h2 class="reveal d1">Brand-Level Price Analysis</h2>
+      <div class="deepdive-mockup reveal d2">
+        <div class="deepdive-panel">
+          <h4>Price Distribution by Brand</h4>
+          <div class="funnel">
+            <div class="funnel-step" style="width:100%;background:rgba(0,61,122,0.3);"><span>Candia UHT 1L</span><span>Rs 72</span></div>
+            <div class="funnel-step" style="width:85%;background:rgba(236,72,153,0.3);"><span>Yoplait 125g</span><span>Rs 45</span></div>
+            <div class="funnel-step" style="width:70%;background:rgba(245,158,11,0.4);"><span>J Juice 1L</span><span>Rs 58</span></div>
+            <div class="funnel-step" style="width:60%;background:rgba(0,61,122,0.45);"><span>Candia Cr&egrave;me 200ml</span><span>Rs 85</span></div>
+          </div>
+        </div>
+        <div class="deepdive-panel">
+          <h4>Outlet Price Comparison</h4>
+          <div class="h-bars">
+            <div class="h-bar-row"><span class="h-bar-label">Jumbo</span><div class="h-bar" style="width:65%;background:var(--gradient-cyan);"><span class="h-bar-val">Rs 68</span></div></div>
+            <div class="h-bar-row"><span class="h-bar-label">Winner's</span><div class="h-bar" style="width:72%;background:rgba(0,61,122,0.7);"><span class="h-bar-val">Rs 72</span></div></div>
+            <div class="h-bar-row"><span class="h-bar-label">Super U</span><div class="h-bar" style="width:68%;background:rgba(34,197,94,0.6);"><span class="h-bar-val">Rs 70</span></div></div>
+            <div class="h-bar-row"><span class="h-bar-label">Intermart</span><div class="h-bar" style="width:75%;background:rgba(245,158,11,0.6);"><span class="h-bar-val">Rs 75</span></div></div>
+            <div class="h-bar-row"><span class="h-bar-label">Corner Shop</span><div class="h-bar" style="width:82%;background:rgba(239,68,68,0.6);"><span class="h-bar-val">Rs 80</span></div></div>
+          </div>
+        </div>
+        <div class="deepdive-panel">
+          <h4>Competitor Radar</h4>
+          <div style="display:flex;align-items:center;gap:20px;">
+            <div class="radar-mock"><div class="radar-shape"></div></div>
+            <div style="display:flex;flex-direction:column;gap:8px;">
+              <span style="font-size:0.8rem;color:var(--gray-400);">&#9679; Elle &amp; Vire: <strong style="color:#1a1a2e;">+8% premium</strong></span>
+              <span style="font-size:0.8rem;color:var(--gray-400);">&#9679; Anchor: <strong style="color:#1a1a2e;">-2% cheaper</strong></span>
+              <span style="font-size:0.8rem;color:var(--gray-400);">&#9679; Nestl&eacute;: <strong style="color:#1a1a2e;">+3% premium</strong></span>
+              <span style="font-size:0.8rem;color:var(--gray-400);">&#9679; Del Monte: <strong style="color:#1a1a2e;">-5% cheaper</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="deepdive-panel">
+          <h4>Price Gap Analysis</h4>
+          <div style="position:relative;height:120px;">
+            <div style="position:absolute;top:15px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--maurilait-blue);box-shadow:0 0 6px rgba(0,61,122,0.3);"></div>
+            <span style="position:absolute;top:5px;left:calc(50% + 14px);font-size:0.7rem;color:var(--maurilait-blue);font-family:var(--font-mono);">Maurilait</span>
+            <div style="position:absolute;top:35px;left:70%;width:8px;height:8px;border-radius:50%;background:var(--amber);"></div>
+            <span style="position:absolute;top:30px;left:calc(70% + 12px);font-size:0.7rem;color:var(--amber);font-family:var(--font-mono);">Elle &amp; Vire</span>
+            <div style="position:absolute;top:55px;left:35%;width:8px;height:8px;border-radius:50%;background:rgba(34,197,94,0.7);"></div>
+            <span style="position:absolute;top:50px;left:calc(35% + 12px);font-size:0.7rem;color:rgba(34,197,94,0.7);font-family:var(--font-mono);">Anchor</span>
+            <div style="position:absolute;top:75px;left:60%;width:8px;height:8px;border-radius:50%;background:rgba(124,58,237,0.7);"></div>
+            <span style="position:absolute;top:70px;left:calc(60% + 12px);font-size:0.7rem;color:rgba(124,58,237,0.7);font-family:var(--font-mono);">Nestl&eacute;</span>
+            <div style="position:absolute;top:90px;left:25%;width:6px;height:6px;border-radius:50%;background:var(--gray-500);"></div>
+            <span style="position:absolute;top:86px;left:calc(25% + 10px);font-size:0.7rem;color:var(--gray-500);font-family:var(--font-mono);">Del Monte</span>
+            <div style="position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(0,0,0,0.06);"></div>
+            <div style="position:absolute;bottom:0;left:0;top:0;width:1px;background:rgba(0,0,0,0.06);"></div>
+            <span style="position:absolute;bottom:-16px;right:0;font-size:0.6rem;color:var(--gray-700);font-family:var(--font-mono);">Price Premium &rarr;</span>
+            <span style="position:absolute;top:-4px;left:4px;font-size:0.6rem;color:var(--gray-700);font-family:var(--font-mono);">&uarr; Distribution</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal d3" style="display:flex;align-items:center;gap:10px;margin-top:20px;">
+        <span style="font-size:0.7rem;color:var(--gray-500);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:0.06em;">5 analytical tabs:</span>
+        <div class="product-thumbs" style="margin-top:0;">
+          <span style="font-size:0.65rem;color:var(--maurilait-blue);font-family:var(--font-mono);background:rgba(0,61,122,0.1);padding:2px 8px;border-radius:4px;">Per-Brand</span>
+          <span style="font-size:0.65rem;color:var(--maurilait-blue);font-family:var(--font-mono);background:rgba(0,61,122,0.1);padding:2px 8px;border-radius:4px;">Product-Level</span>
+          <span style="font-size:0.65rem;color:var(--maurilait-blue);font-family:var(--font-mono);background:rgba(0,61,122,0.1);padding:2px 8px;border-radius:4px;">Outlet Compare</span>
+          <span style="font-size:0.65rem;color:var(--maurilait-blue);font-family:var(--font-mono);background:rgba(0,61,122,0.1);padding:2px 8px;border-radius:4px;">Competitor Gap</span>
+          <span style="font-size:0.65rem;color:var(--maurilait-blue);font-family:var(--font-mono);background:rgba(0,61,122,0.1);padding:2px 8px;border-radius:4px;">Trends</span>
+        </div>
+      </div>
+      <p class="subtitle reveal d3" style="margin-top:12px;">Drill into any brand, any outlet, any district, any time period.</p>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 10: DISTRICT INTELLIGENCE ==================== -->
+  <div class="slide" data-slide="10">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">Geographic Coverage</p>
+      <h2 class="reveal d1">District-Level Intelligence</h2>
+      <div class="map-container reveal d2">
+        <div class="map-svg-wrap">
+          <svg viewBox="0 0 340 420" width="310" height="385" xmlns="http://www.w3.org/2000/svg"><path d="M31,377 L30,379 L29,379 L30,376 L31,377Z M32,354 L33,348 L35,346 L39,345 L39,346 L32,354Z M102,227 L105,263 L107,293 L108,302 L113,305 L109,308 L101,307 L95,313 L94,320 L102,328 L98,333 L103,338 L113,347 L108,351 L93,348 L82,354 L72,361 L63,361 L59,365 L57,371 L59,379 L56,383 L48,388 L40,383 L29,373 L29,372 L16,376 L20,357 L21,359 L30,362 L37,360 L44,353 L49,346 L50,340 L51,335 L56,333 L53,330 L50,329 L44,328 L51,320 L54,319 L47,315 L46,304 L56,296 L52,292 L46,276 L51,266 L56,261 L57,250 L60,244 L71,235 L71,226 L84,217 L89,212 L98,210 L113,214 L102,227Z" fill="rgba(124,58,237,0.38)" stroke="rgba(124,58,237,0.5)" stroke-width="1"/><path d="M319,277 L318,277 L319,276 L319,276 L319,277Z M327,259 L327,266 L328,268 L322,269 L322,264 L324,262 L323,261 L321,258 L327,258 L327,259Z M291,294 L281,300 L258,300 L247,299 L230,299 L240,266 L238,231 L210,212 L205,208 L219,204 L289,176 L294,183 L292,190 L287,193 L285,196 L289,198 L287,202 L287,205 L289,208 L291,205 L295,208 L295,204 L299,207 L304,208 L306,218 L313,229 L320,235 L326,244 L314,251 L317,253 L315,253 L319,255 L320,257 L319,265 L317,270 L319,273 L316,277 L315,279 L305,280 L310,289 L291,294Z" fill="rgba(0,180,216,0.38)" stroke="rgba(0,180,216,0.5)" stroke-width="1"/><path d="M265,367 L265,366 L266,365 L266,366 L265,367Z M281,350 L279,351 L278,349 L280,347 L282,349 L281,350Z M235,298 L251,299 L262,302 L281,298 L297,290 L303,295 L304,298 L308,302 L299,303 L300,309 L288,312 L278,323 L270,326 L265,321 L262,324 L259,333 L255,336 L260,339 L262,338 L264,340 L267,343 L268,347 L272,349 L273,351 L275,359 L268,362 L261,361 L258,362 L263,364 L258,370 L249,376 L243,382 L224,388 L209,386 L203,377 L189,366 L183,360 L181,356 L173,344 L157,338 L156,330 L201,303 L213,301 L226,298 L235,298Z M313,327 L313,327 L314,327 L314,327 L313,327Z" fill="rgba(245,158,11,0.38)" stroke="rgba(245,158,11,0.5)" stroke-width="1"/><path d="M205,208 L210,212 L238,231 L240,266 L223,302 L209,304 L193,301 L172,296 L156,279 L153,266 L148,253 L136,252 L127,248 L120,238 L117,223 L120,217 L134,216 L150,225 L169,223 L184,221 L190,216 L194,211 L205,208Z" fill="rgba(245,158,11,0.48)" stroke="rgba(245,158,11,0.6)" stroke-width="1"/><path d="M224,199 L211,205 L200,210 L190,215 L186,218 L175,225 L167,212 L165,200 L153,195 L130,185 L143,175 L138,168 L142,164 L140,162 L144,153 L146,147 L155,140 L162,131 L165,118 L167,114 L170,117 L175,120 L178,124 L204,153 L223,172 L214,181 L224,199Z" fill="rgba(0,180,216,0.42)" stroke="rgba(0,180,216,0.55)" stroke-width="1"/><path d="M110,350 L111,345 L94,335 L101,334 L99,327 L93,318 L97,313 L105,307 L110,311 L111,303 L103,297 L103,289 L102,258 L105,226 L117,223 L120,238 L127,248 L136,252 L148,253 L153,266 L156,279 L172,296 L197,302 L146,337 L133,334 L123,339 L121,350 L110,350Z" fill="rgba(0,212,255,0.48)" stroke="rgba(0,212,255,0.6)" stroke-width="1"/><path d="M113,218 L116,210 L118,210 L121,202 L125,201 L130,203 L131,202 L126,197 L129,192 L136,194 L150,195 L165,206 L169,216 L158,224 L139,222 L124,215 L113,218Z" fill="rgba(0,119,182,0.55)" stroke="rgba(0,119,182,0.7)" stroke-width="1"/><path d="M220,178 L198,157 L205,152 L178,122 L185,120 L185,114 L188,112 L190,109 L195,106 L201,104 L212,107 L217,108 L216,111 L220,110 L222,113 L226,114 L229,115 L231,115 L235,114 L235,117 L236,118 L243,119 L247,121 L247,123 L248,126 L248,131 L247,134 L250,137 L248,140 L249,143 L250,148 L253,154 L255,157 L262,162 L263,163 L263,164 L265,166 L265,170 L270,172 L275,173 L281,173 L288,174 L214,181 L220,178Z M257,131 L265,135 L261,137 L257,138 L253,138 L253,138 L258,133 L255,129 L258,130 L257,131Z M193,104 L193,105 L192,106 L191,105 L193,104Z M211,83 L212,86 L210,86 L209,84 L207,84 L204,82 L205,81 L209,80 L209,79 L211,79 L210,81 L212,81 L211,83Z M240,53 L239,51 L239,49 L242,49 L245,52 L243,54 L240,53Z M237,45 L237,48 L236,49 L234,51 L231,50 L228,51 L225,49 L227,46 L225,45 L225,44 L226,44 L229,41 L231,41 L235,42 L236,45 L237,45Z M317,30 L318,32 L319,32 L319,33 L315,36 L311,36 L309,34 L310,28 L313,27 L317,26 L320,28 L320,29 L317,30Z M326,16 L325,16 L323,14 L323,12 L325,12 L326,12 L327,14 L326,16Z" fill="rgba(245,158,11,0.42)" stroke="rgba(245,158,11,0.55)" stroke-width="1"/><path d="M52,386 L59,381 L57,376 L57,365 L63,363 L70,363 L78,356 L89,351 L107,349 L114,350 L122,345 L131,334 L139,338 L157,338 L173,344 L181,356 L183,360 L189,366 L203,377 L209,386 L210,393 L196,395 L178,402 L166,405 L149,408 L144,405 L136,404 L118,403 L114,401 L104,396 L99,394 L80,401 L68,395 L57,390 L51,389 L52,386Z" fill="rgba(0,180,216,0.32)" stroke="rgba(0,180,216,0.45)" stroke-width="1"/><rect x="3" y="350" width="75" height="52" rx="6" fill="rgba(255,255,255,0.7)" stroke="rgba(0,0,0,0.08)" stroke-width="0.5"/><text x="40" y="363" text-anchor="middle" fill="#64748B" font-size="6.5" font-family="DM Sans">Rodrigues</text><path d="M30,393 L30,394 L29,394 L28,394 L28,393 L29,392 L31,393 L30,393 L30,393Z M38,391 L39,391 L40,391 L39,392 L39,391 L38,391Z M41,390 L41,391 L41,391 L40,391 L41,390Z M23,389 L24,388 L24,389 L24,390 L23,389Z M19,387 L19,388 L18,387 L18,387 L19,387Z M13,378 L13,379 L12,381 L12,380 L13,378Z M14,374 L14,373 L14,375 L14,375 L14,374Z M47,396 L48,397 L48,397 L48,397 L47,396Z M49,395 L49,395 L48,394 L48,394 L47,393 L48,393 L49,393 L49,394 L50,394 L49,395Z M46,394 L44,394 L42,392 L42,391 L42,392 L44,392 L44,393 L46,394Z M51,387 L51,388 L51,388 L50,388 L51,387Z M60,367 L61,368 L65,370 L67,371 L66,371 L65,374 L66,375 L67,376 L65,379 L63,381 L62,381 L59,384 L55,385 L55,384 L53,386 L51,385 L49,385 L46,386 L44,386 L42,386 L40,387 L39,388 L39,388 L39,389 L39,391 L37,391 L35,391 L33,391 L34,392 L34,393 L30,391 L27,389 L28,387 L29,386 L29,386 L29,384 L26,385 L25,386 L24,387 L24,387 L21,386 L21,384 L22,383 L22,382 L22,380 L23,378 L24,378 L25,378 L28,377 L29,377 L29,378 L30,376 L31,376 L34,377 L33,374 L35,373 L36,373 L36,372 L38,371 L39,371 L41,370 L42,371 L44,369 L48,367 L51,366 L52,366 L54,366 L55,365 L59,367 L60,367Z M44,367 L45,367 L44,367 L44,367 L44,367Z" fill="rgba(245,158,11,0.3)" stroke="rgba(245,158,11,0.4)" stroke-width="0.8"/><text x="67" y="316" text-anchor="middle" fill="#1a1a2e" font-size="8" font-weight="500" font-family="DM Sans">Black River</text><text x="288" y="239" text-anchor="middle" fill="#1a1a2e" font-size="8" font-weight="500" font-family="DM Sans">Flacq</text><text x="249" y="335" text-anchor="middle" fill="#1a1a2e" font-size="8" font-weight="500" font-family="DM Sans">Grand Port</text><text x="171" y="247" text-anchor="middle" fill="#1a1a2e" font-size="8" font-weight="500" font-family="DM Sans">Moka</text><text x="171" y="169" text-anchor="middle" fill="#1a1a2e" font-size="8" font-weight="500" font-family="DM Sans">Pamplemousses</text><text x="122" y="297" text-anchor="middle" fill="#1a1a2e" font-size="8" font-weight="500" font-family="DM Sans">Plaines Wilhems</text><text x="134" y="207" text-anchor="middle" fill="#1a1a2e" font-size="7" font-weight="500" font-family="DM Sans">Port Louis</text><text x="234" y="136" text-anchor="middle" fill="#1a1a2e" font-size="8" font-weight="500" font-family="DM Sans">Riv. du Rempart</text><text x="124" y="376" text-anchor="middle" fill="#1a1a2e" font-size="8" font-weight="500" font-family="DM Sans">Savanne</text></svg>
+        </div>
+        <div class="map-legend">
+          <div style="margin-bottom:12px;">
+            <h3 style="font-size:1.1rem;margin-bottom:4px;">Price Variation Mapped</h3>
+            <p style="font-size:0.9rem;">Across all 12 districts of Mauritius</p>
+          </div>
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:rgba(0,212,255,0.6);"></div>High outlet density (competitive)</div>
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:rgba(245,158,11,0.6);"></div>Price premium zones</div>
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:rgba(124,58,237,0.5);"></div>Competitor-dominated areas</div>
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:rgba(34,197,94,0.5);"></div>Urban commercial hub</div>
+          <div class="map-legend-item"><div class="map-legend-dot" style="background:rgba(239,68,68,0.4);"></div>Rural / higher-price zone</div>
+          <div style="margin-top:16px;padding:16px;background:var(--bg-card);border:1px solid rgba(245,158,11,0.2);border-radius:12px;">
+            <p style="font-size:0.85rem;color:var(--coral);font-weight:500;">Know exactly where your prices are competitive &mdash; and where you're losing margin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 11: TIMELINE ==================== -->
+  <div class="slide" data-slide="11">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">Roadmap</p>
+      <h2 class="reveal d1">Implementation Timeline</h2>
+      <div class="timeline reveal d2">
+        <div class="timeline-item">
+          <div class="timeline-dot" style="font-size:0.65rem;">NOW</div>
+          <div class="timeline-content">
+            <h3>Phase 1: Pricing Audit Dashboard</h3>
+            <p>Dashboard ready for demo. Panel-based audit infrastructure configured, initial audit cycle underway.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">Q3<br>26</div>
+          <div class="timeline-content">
+            <h3>Phase 2: Brand Health Tracker</h3>
+            <p>Layer brand health metrics on top of price data. Consumer perception, brand awareness, and usage tracking.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">Q4<br>26</div>
+          <div class="timeline-content">
+            <h3>Phase 3: Field Worker App + Backend</h3>
+            <p>Custom mobile app for field data collection. GPS-tagged, photo-verified entries. Real-time sync to dashboard.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot" style="font-size:0.65rem;">Q1<br>27</div>
+          <div class="timeline-content">
+            <h3>Phase 4: Full Production</h3>
+            <p>Complete system live. Automated alerts, API access, advanced analytics, predictive pricing models.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 12: PACKAGES ==================== -->
+  <div class="slide" data-slide="12">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">Investment</p>
+      <h2 class="reveal d1">Investment Packages</h2>
+      <div class="cards-grid cols-3 reveal d2" style="max-width:1050px;">
+        <div class="package-card">
+          <h3>Essential</h3>
+          <ul class="package-list">
+            <li>Pricing audit dashboard</li>
+            <li>4 Maurilait brands tracked</li>
+            <li>Monthly price reports</li>
+            <li>12-district coverage</li>
+            <li>Basic competitor comparison</li>
+          </ul>
+          <div class="package-price">Rs 45,000<span class="package-price-period">per month</span></div>
+        </div>
+        <div class="package-card featured">
+          <h3>Professional</h3>
+          <ul class="package-list">
+            <li>Everything in Essential</li>
+            <li>Full competitor tracking (6 brands)</li>
+            <li>Regional price analysis</li>
+            <li>Custom price alerts</li>
+            <li>Outlet-level breakdowns</li>
+            <li>Weekly alert digests</li>
+          </ul>
+          <div class="package-price">Rs 75,000<span class="package-price-period">per month</span></div>
+        </div>
+        <div class="package-card">
+          <h3>Enterprise</h3>
+          <ul class="package-list">
+            <li>Everything in Professional</li>
+            <li>Brand health tracker</li>
+            <li>Field worker mobile app</li>
+            <li>API access for integration</li>
+            <li>Dedicated analyst</li>
+            <li>Custom reporting &amp; models</li>
+          </ul>
+          <div class="package-price">Rs 120,000<span class="package-price-period">per month</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 13: TEAM ==================== -->
+  <div class="slide" data-slide="13">
+    <div class="slide-inner">
+      <p class="section-label reveal d0">Your Team</p>
+      <h2 class="reveal d1">Meet the Team</h2>
+      <span class="exotica-logo-inline reveal d1" style="margin-bottom:24px;"><svg class="star" viewBox="0 0 64 64" fill="none"><path d="M32 2L38 24H26L32 2Z" fill="#D4A853"/><path d="M32 62L26 40H38L32 62Z" fill="#D4A853"/><path d="M2 32L24 26V38L2 32Z" fill="#D4A853"/><path d="M62 32L40 38V26L62 32Z" fill="#D4A853"/><circle cx="32" cy="32" r="6" fill="#D4A853"/></svg><svg class="wordmark" viewBox="0 0 160 28" fill="none"><path d="M0 2H18V7H6V11.5H16V16.5H6V21H18V26H0V2Z" fill="#D4A853"/><path d="M22 2H29L33.5 10.5L38 2H45L37 14L45.5 26H38.5L33.5 17L28.5 26H21.5L30 14L22 2Z" fill="#D4A853"/><path d="M56 1C63.5 1 69 7 69 14C69 21 63.5 27 56 27C48.5 27 43 21 43 14C43 7 48.5 1 56 1ZM56 6.5C51.8 6.5 49 9.8 49 14C49 18.2 51.8 21.5 56 21.5C60.2 21.5 63 18.2 63 14C63 9.8 60.2 6.5 56 6.5Z" fill="#D4A853"/><path d="M70 2H90V7H83V26H77V7H70V2Z" fill="#D4A853"/><path d="M92 2H98V26H92V2Z" fill="#D4A853"/><path d="M112 1C119.5 1 124 5.5 125 10H119C118.2 8 115.8 6.5 112 6.5C107.8 6.5 105 9.8 105 14C105 18.2 107.8 21.5 112 21.5C115.8 21.5 118.2 20 119 18H125C124 22.5 119.5 27 112 27C104.5 27 99 21 99 14C99 7 104.5 1 112 1Z" fill="#D4A853"/><path d="M126 26L137 2H143L154 26H148L145.5 20H134.5L132 26H126ZM136.5 15.5H143.5L140 7L136.5 15.5Z" fill="#D4A853"/></svg></span>
+      <div class="team-grid reveal d2">
+        <div class="team-card">
+          <img class="team-avatar" src="../assests/irfaan.png" alt="Irfaan Mooradun" style="border:3px solid rgba(0,61,122,0.15);">
+          <h3>Irfaan Mooradun</h3>
+          <p class="team-role">Director, Client Relations</p>
+          <p class="team-detail">Mauritius-based, 5+ years in FMCG brand strategy and activation</p>
+        </div>
+        <div class="team-card">
+          <img class="team-avatar" src="../assests/ernest_bNw.png" alt="Ernest Moyo" style="border:3px solid rgba(0,61,122,0.15);">
+          <h3>Ernest Moyo</h3>
+          <p class="team-role">Research, Technology &amp; Data Science</p>
+          <p class="team-detail">Platform development, data science, analytics infrastructure &amp; AI</p>
+        </div>
+      </div>
+      <div class="reveal d3" style="margin-top:32px;text-align:center;padding:20px 28px;background:var(--bg-card);border:1px solid rgba(0,0,0,0.08);border-radius:14px;max-width:600px;">
+        <p style="color:var(--gray-300);font-size:1.05rem;">Supported by a team of <strong style="color:var(--cyan);">24+ trained field researchers</strong> deployed across Mauritius</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== SLIDE 14: CONTACT ==================== -->
+  <div class="slide" data-slide="14">
+    <div class="glow-cyan" style="top:-100px;left:-100px;"></div>
+    <div class="glow-amber" style="bottom:-100px;right:-50px;"></div>
+    <div class="glow-forest" style="top:50%;left:50%;transform:translate(-50%,-50%);width:500px;height:500px;"></div>
+    <div class="slide-inner" style="text-align:center;">
+      <p class="section-label reveal d0">Next Steps</p>
+      <h2 class="reveal d1" style="margin-bottom:20px;">Let's Get Started</h2>
+      <div class="cover-line reveal d1" style="margin:0 auto 32px;"></div>
+      <div class="contact-grid reveal d2">
+        <div class="contact-item">
+          <div class="contact-icon">&#128222;</div>
+          <span>5829 4167</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#9993;</div>
+          <span>exoticamauritius@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#128205;</div>
+          <span>Port Louis, Mauritius</span>
+        </div>
+      </div>
+      <div class="reveal d3" style="margin-top:48px;">
+        <div class="cover-logos" style="justify-content:center;margin-bottom:16px;">
+          <span class="exotica-logo-inline large"><svg class="star" viewBox="0 0 64 64" fill="none"><path d="M32 2L38 24H26L32 2Z" fill="#D4A853"/><path d="M32 62L26 40H38L32 62Z" fill="#D4A853"/><path d="M2 32L24 26V38L2 32Z" fill="#D4A853"/><path d="M62 32L40 38V26L62 32Z" fill="#D4A853"/><path d="M12 12L28 24L20 28L12 12Z" fill="#D4A853" opacity="0.7"/><path d="M52 12L44 28L36 24L52 12Z" fill="#D4A853" opacity="0.7"/><path d="M12 52L20 36L28 40L12 52Z" fill="#D4A853" opacity="0.7"/><path d="M52 52L36 40L44 36L52 52Z" fill="#D4A853" opacity="0.7"/><circle cx="32" cy="32" r="6" fill="#D4A853"/></svg><svg class="wordmark" viewBox="0 0 160 28" fill="none"><path d="M0 2H18V7H6V11.5H16V16.5H6V21H18V26H0V2Z" fill="#D4A853"/><path d="M22 2H29L33.5 10.5L38 2H45L37 14L45.5 26H38.5L33.5 17L28.5 26H21.5L30 14L22 2Z" fill="#D4A853"/><path d="M56 1C63.5 1 69 7 69 14C69 21 63.5 27 56 27C48.5 27 43 21 43 14C43 7 48.5 1 56 1ZM56 6.5C51.8 6.5 49 9.8 49 14C49 18.2 51.8 21.5 56 21.5C60.2 21.5 63 18.2 63 14C63 9.8 60.2 6.5 56 6.5Z" fill="#D4A853"/><path d="M70 2H90V7H83V26H77V7H70V2Z" fill="#D4A853"/><path d="M92 2H98V26H92V2Z" fill="#D4A853"/><path d="M112 1C119.5 1 124 5.5 125 10H119C118.2 8 115.8 6.5 112 6.5C107.8 6.5 105 9.8 105 14C105 18.2 107.8 21.5 112 21.5C115.8 21.5 118.2 20 119 18H125C124 22.5 119.5 27 112 27C104.5 27 99 21 99 14C99 7 104.5 1 112 1Z" fill="#D4A853"/><path d="M126 26L137 2H143L154 26H148L145.5 20H134.5L132 26H126ZM136.5 15.5H143.5L140 7L136.5 15.5Z" fill="#D4A853"/></svg></span>
+          <span class="divider"></span>
+          <img src="../assests/logo.png" alt="Maurilait" style="height:48px;object-fit:contain;">
+        </div>
+        <p class="contact-cta">"We're ready when you are."</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PROGRESS BAR -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- SLIDE COUNTER -->
+<div class="slide-counter" id="slideCounter">01 / 14</div>
+
+<!-- NAV HINT -->
+<div class="nav-hint">
+  <span class="nav-key">&larr;</span>
+  <span class="nav-key">&rarr;</span>
+  <span style="margin-left:4px;">Navigate</span>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var slides = document.querySelectorAll('.slide');
+  var totalSlides = slides.length;
+  var progressBar = document.getElementById('progressBar');
+  var slideCounter = document.getElementById('slideCounter');
+  var currentSlide = 0;
+  var isTransitioning = false;
+
+  // ========== FLOATING PARTICLES ==========
+  function createParticles() {
+    var container = document.getElementById('particles');
+    if (!container) return;
+    var colors = ['rgba(0,212,255,0.15)', 'rgba(27,67,50,0.12)', 'rgba(212,168,83,0.12)', 'rgba(0,61,122,0.1)', 'rgba(0,0,0,0.04)'];
+    for (var i = 0; i < 25; i++) {
+      var dot = document.createElement('div');
+      dot.className = 'particle';
+      var size = Math.random() * 6 + 2;
+      dot.style.width = size + 'px';
+      dot.style.height = size + 'px';
+      dot.style.left = Math.random() * 100 + '%';
+      dot.style.background = colors[Math.floor(Math.random() * colors.length)];
+      dot.style.animationDuration = (Math.random() * 15 + 10) + 's';
+      dot.style.animationDelay = (Math.random() * 10) + 's';
+      container.appendChild(dot);
+    }
+  }
+  createParticles();
+
+  // ========== TYPING EFFECT ==========
+  var typingText = 'Know your prices. Own your market.';
+  var typingTarget = document.getElementById('typingTarget');
+  var typingIndex = 0;
+  var typingStarted = false;
+
+  function typeNextChar() {
+    if (typingIndex <= typingText.length) {
+      typingTarget.textContent = typingText.substring(0, typingIndex);
+      typingIndex++;
+      setTimeout(typeNextChar, 45);
+    }
+  }
+
+  function startTyping() {
+    if (typingStarted) return;
+    typingStarted = true;
+    typingIndex = 0;
+    typingTarget.textContent = '';
+    setTimeout(typeNextChar, 800);
+  }
+
+  // Start typing on cover load
+  startTyping();
+
+  // ========== NUMBER COUNT-UP ==========
+  function animateCountUp(el, target, prefix, duration) {
+    var start = 0;
+    var startTime = null;
+    prefix = prefix || '';
+
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var progress = Math.min((timestamp - startTime) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = Math.round(eased * target);
+      el.textContent = prefix + current;
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+    requestAnimationFrame(step);
+  }
+
+  function triggerCountUps(slideEl) {
+    var elements = slideEl.querySelectorAll('[data-countup]');
+    for (var i = 0; i < elements.length; i++) {
+      var el = elements[i];
+      if (el.dataset.counted) continue;
+      el.dataset.counted = '1';
+      var target = parseInt(el.dataset.countup, 10);
+      var prefix = el.dataset.prefix || '';
+      animateCountUp(el, target, prefix, 1200);
+    }
+  }
+
+  // ========== SLIDE COUNTER FORMAT ==========
+  function formatSlideNum(n) {
+    return n < 10 ? '0' + n : '' + n;
+  }
+
+  function updateUI() {
+    var progress = ((currentSlide + 1) / totalSlides) * 100;
+    progressBar.style.width = progress + '%';
+    slideCounter.textContent = formatSlideNum(currentSlide + 1) + ' / ' + formatSlideNum(totalSlides);
+  }
+
+  function goToSlide(index) {
+    if (index < 0 || index >= totalSlides || index === currentSlide || isTransitioning) return;
+    isTransitioning = true;
+
+    var oldSlide = slides[currentSlide];
+    oldSlide.classList.add('exiting');
+    oldSlide.classList.remove('active');
+
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+    updateUI();
+
+    // Trigger count-ups for methodology slide
+    if (slides[currentSlide].dataset.slide === '6') {
+      setTimeout(function() { triggerCountUps(slides[currentSlide]); }, 400);
+    }
+
+    // Re-trigger typing if back on cover
+    if (currentSlide === 0) {
+      typingStarted = false;
+      startTyping();
+    }
+
+    setTimeout(function() {
+      oldSlide.classList.remove('exiting');
+      isTransitioning = false;
+    }, 750);
+  }
+
+  function nextSlide() { goToSlide(currentSlide + 1); }
+  function prevSlide() { goToSlide(currentSlide - 1); }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    switch(e.key) {
+      case 'ArrowRight':
+      case 'ArrowDown':
+      case ' ':
+      case 'PageDown':
+        e.preventDefault();
+        nextSlide();
+        break;
+      case 'ArrowLeft':
+      case 'ArrowUp':
+      case 'PageUp':
+        e.preventDefault();
+        prevSlide();
+        break;
+      case 'Home':
+        e.preventDefault();
+        goToSlide(0);
+        break;
+      case 'End':
+        e.preventDefault();
+        goToSlide(totalSlides - 1);
+        break;
+      case 'Escape':
+        e.preventDefault();
+        goToSlide(0);
+        break;
+    }
+  });
+
+  // Touch support
+  var touchStartX = 0;
+  var touchStartY = 0;
+
+  document.addEventListener('touchstart', function(e) {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  document.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].screenX - touchStartX;
+    var dy = e.changedTouches[0].screenY - touchStartY;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {
+      if (dx < 0) nextSlide();
+      else prevSlide();
+    }
+  }, { passive: true });
+
+  // Mouse wheel
+  var wheelTimeout = null;
+  document.addEventListener('wheel', function(e) {
+    if (wheelTimeout) return;
+    wheelTimeout = setTimeout(function() { wheelTimeout = null; }, 800);
+    if (e.deltaY > 0) nextSlide();
+    else prevSlide();
+  }, { passive: true });
+
+  // Initialize
+  updateUI();
+})();
+</script>
+
+</body>
+</html>

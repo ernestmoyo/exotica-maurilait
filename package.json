@@ -1,0 +1,11 @@
+{
+  "name": "exotica-maurilait",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exotica Agency x Maurilait Mauritius — Price Monitoring & Brand Intelligence Platform",
+  "scripts": {
+    "dev": "cd apps/tracker && npm run dev",
+    "build": "cd apps/tracker && npm run build",
+    "install:tracker": "cd apps/tracker && npm install"
+  }
+}
